@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: safetraveler
+      POSTGRES_PASSWORD: safetraveler
+      POSTGRES_DB: safetraveler
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+  backend:
+    image: node:18-alpine
+    working_dir: /app
+    command: sh -c "npm i && npm run dev"
+    environment:
+      DATABASE_URL: postgres://safetraveler:safetraveler@db:5432/safetraveler
+      NODE_ENV: development
+    volumes:
+      - ./backend:/app
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+
+  frontend:
+    image: nginx:alpine
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  dbdata:
+

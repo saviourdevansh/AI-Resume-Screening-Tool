@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SafeTraveler MVP</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+      :root { --bg: #0b1220; --card: #111827; --text: #e5e7eb; --accent: #22c55e; --danger: #ef4444; }
+      body { margin:0; font-family: system-ui, Arial; background: linear-gradient(180deg, #0b1220, #0f172a); color: var(--text); }
+      .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+      .card { background: rgba(17, 24, 39, 0.85); border: 1px solid #1f2937; border-radius: 12px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+      .row { display:flex; gap:12px; flex-wrap:wrap; }
+      .col { flex:1 1 320px; }
+      button { background: #2563eb; color:white; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; transition: .2s; }
+      button:hover { transform: translateY(-1px); opacity:.95; }
+      .btn-danger { background: var(--danger); }
+      .btn-success { background: var(--accent); }
+      .hidden { display:none; }
+      .center { display:flex; align-items:center; justify-content:center; }
+      input, select { width:100%; padding:10px; border-radius:8px; border:1px solid #374151; background:#0b1220; color:#e5e7eb; }
+      label { font-size: 12px; opacity:.9; }
+      .topbar { display:flex; gap:12px; align-items:center; justify-content:space-between; margin-bottom:12px; }
+      .tabs { display:flex; gap:8px; flex-wrap:wrap; }
+      .tab { padding:8px 12px; border-radius:999px; border:1px solid #334155; cursor:pointer; }
+      .active { background:#1f2937; }
+      #map { height: 360px; border-radius:12px; overflow:hidden; }
+      .sos { position: fixed; right: 20px; bottom: 20px; width: 64px; height:64px; border-radius:999px; background:#ef4444; color:white; font-weight:700; box-shadow:0 10px 20px rgba(239,68,68,.5); }
+      .notif { position: fixed; right: 20px; top: 20px; width: 320px; display:flex; flex-direction:column; gap:8px; }
+      .toast { background:#111827; border:1px solid #334155; border-radius:10px; padding:10px; font-size:14px; }
+      @media (max-width: 640px){
+        .col { flex: 1 1 100%; }
+        .topbar { flex-wrap: wrap; gap: 6px; }
+        #map, #heatmap { height: 260px !important; }
+        button { width: 100%; }
+      }
+    </style>
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <div class="container">
+      <div class="topbar">
+        <div style="font-weight:700">🛡️ SafeTraveler</div>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <select id="lang">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="as">অসমীয়া</option>
+          </select>
+          <button id="toggleTheme">🌓</button>
+        </div>
+      </div>
+
+      <div id="screen-auth-choice" class="card">
+        <h2 data-i18n="welcome">Welcome! Let’s Get Started</h2>
+        <div class="row">
+          <div class="col"><button id="goSignup" class="btn-success" data-i18n="signup">Sign Up</button></div>
+          <div class="col"><button id="goLogin" data-i18n="login">Log In</button></div>
+        </div>
+      </div>
+
+      <div id="screen-signup" class="card hidden">
+        <h3 data-i18n="create_account">Create Account</h3>
+        <div class="row">
+          <div class="col"><label data-i18n="full_name">Full Name</label><input id="suName" /></div>
+          <div class="col"><label>Email</label><input id="suEmail" type="email" /></div>
+          <div class="col"><label data-i18n="username">Username</label><input id="suUser" /></div>
+          <div class="col"><label data-i18n="password">Password</label><input id="suPass" type="password" /></div>
+          <div class="col"><label data-i18n="confirm_password">Confirm Password</label><input id="suPass2" type="password" /></div>
+          <div class="col"><label>DOB</label><input id="suDob" type="date" /></div>
+          <div class="col"><label>Gender</label>
+            <select id="suGender"><option>Male</option><option>Female</option><option>Other</option></select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col"><label>OTP (demo 123456)</label><input id="suOtp" /></div>
+        </div>
+        <div class="row">
+          <div class="col"><button id="btnSignup" class="btn-success" data-i18n="signup">Sign Up</button></div>
+          <div class="col"><button id="backChoice" data-i18n="back">Back</button></div>
+        </div>
+      </div>
+
+      <div id="screen-login" class="card hidden">
+        <h3 data-i18n="login">Log In</h3>
+        <div class="row">
+          <div class="col"><label data-i18n="username">Username</label><input id="liUser" /></div>
+          <div class="col"><label data-i18n="password">Password</label><input id="liPass" type="password" /></div>
+        </div>
+        <div class="row">
+          <div class="col"><button id="btnLogin" data-i18n="login">Log In</button></div>
+          <div class="col"><button id="toSignup" data-i18n="signup">Sign Up</button></div>
+        </div>
+        <p>Demo: demo/demo123 or devansh/password123</p>
+      </div>
+
+      <div id="screen-kyc" class="card hidden">
+        <h3 data-i18n="kyc_title">KYC Verification</h3>
+        <div class="tabs">
+          <div class="tab active" id="tab-e-kyc" data-i18n="e_kyc">e-KYC</div>
+          <div class="tab" id="tab-video-kyc" data-i18n="video_kyc">Video KYC</div>
+        </div>
+        <div id="kyc-content" style="margin-top:10px"></div>
+        <div style="margin-top:12px">
+          <button id="btnCompleteKyc" class="btn-success" data-i18n="complete">Complete</button>
+        </div>
+      </div>
+
+      <div id="screen-home" class="card hidden">
+        <h3 id="welcomeUser">Welcome</h3>
+        <div class="row">
+          <div class="col"><button id="goMap">🗺 Map</button></div>
+          <div class="col"><button id="goAlerts">⚠ Alerts</button></div>
+          <div class="col"><button id="goEFIR">📋 E-FIR</button></div>
+          <div class="col"><button id="goTrips">🧭 Trips</button></div>
+          <div class="col"><button id="goHelp">🚑 Help Centers</button></div>
+          <div class="col"><button id="goPolice">👮 Police Dashboard</button></div>
+          <div class="col"><button id="goContacts">📱 Contacts</button></div>
+          <div class="col"><button id="goEfirAdmin">🗂 E-FIR Admin</button></div>
+          <div class="col"><button id="goAdminGeo">🛠 Geofences Admin</button></div>
+          <div class="col"><button id="goSosQueue">🚨 SOS Queue</button></div>
+        </div>
+      </div>
+
+      <div id="screen-map" class="card hidden">
+        <h3>Map & Geofences</h3>
+        <div id="map"></div>
+        <div style="margin-top:10px" class="row">
+          <div class="col"><button id="backHome">⬅ Back</button></div>
+          <div class="col"><button id="mockMove">Simulate Move</button></div>
+        </div>
+      </div>
+
+      <div id="screen-alerts" class="card hidden">
+        <h3>Alerts</h3>
+        <ul id="alertList"></ul>
+        <div style="margin-top:10px"><button id="backHome2">⬅ Back</button></div>
+      </div>
+
+      <div id="screen-efir" class="card hidden">
+        <h3>E-FIR</h3>
+        <div class="row">
+          <div class="col"><label>Category</label><select id="efirCat"><option>Theft</option><option>Fraud</option><option>Harassment</option><option>Accident</option></select></div>
+          <div class="col"><label>When</label><input id="efirWhen" type="datetime-local" /></div>
+          <div class="col"><label>Where (lat,lng)</label><input id="efirWhere" placeholder="26.17,91.74" /></div>
+        </div>
+        <div class="row"><div class="col"><label>Description</label><input id="efirDesc" /></div></div>
+        <div style="margin-top:10px">
+          <button id="submitEfir" class="btn-success">Submit</button>
+          <button id="backHome3">⬅ Back</button>
+        </div>
+        <div id="efirResult" style="margin-top:10px"></div>
+      </div>
+
+      <div id="screen-efir-admin" class="card hidden">
+        <h3>E-FIR Admin (Demo)</h3>
+        <table style="width:100%; border-collapse:collapse">
+          <thead>
+            <tr><th style="text-align:left; padding:6px;">FIR No</th><th style="text-align:left; padding:6px;">User</th><th style="text-align:left; padding:6px;">Category</th><th style="text-align:left; padding:6px;">When</th><th style="text-align:left; padding:6px;">Location</th><th style="text-align:left; padding:6px;">Status</th></tr>
+          </thead>
+          <tbody id="efirRows"></tbody>
+        </table>
+        <div style="margin-top:10px"><button id="backHome7">⬅ Back</button></div>
+      </div>
+
+      <div id="screen-admin-geo" class="card hidden">
+        <h3>Geofences Admin</h3>
+        <div class="row">
+          <div class="col"><label>Name</label><input id="gfName" /></div>
+          <div class="col"><label>Center (lat,lng)</label><input id="gfCenter" placeholder="26.17,91.74" /></div>
+          <div class="col"><label>Radius (m)</label><input id="gfRadius" value="400" /></div>
+          <div class="col"><label>Risk</label><select id="gfRisk"><option>safe</option><option>medium</option><option>danger</option></select></div>
+        </div>
+        <div style="margin-top:10px"><button id="addFence" class="btn-success">Add Geofence</button> <button id="backHome8">⬅ Back</button></div>
+        <ul id="fenceList" style="margin-top:10px"></ul>
+      </div>
+
+      <div id="screen-sos-queue" class="card hidden">
+        <h3>SOS Queue</h3>
+        <ul id="sosList"></ul>
+        <div style="margin-top:10px"><button id="backHome9">⬅ Back</button></div>
+      </div>
+
+      <div id="screen-contacts" class="card hidden">
+        <h3>Emergency Contacts</h3>
+        <div class="row">
+          <div class="col"><label>Name</label><input id="ctName" /></div>
+          <div class="col"><label>Phone</label><input id="ctPhone" /></div>
+          <div class="col"><label>Priority</label><input id="ctPrio" value="1" /></div>
+        </div>
+        <div style="margin-top:10px">
+          <button id="addContact" class="btn-success">Add</button>
+          <button id="backHome6">⬅ Back</button>
+        </div>
+        <ul id="contactList" style="margin-top:10px"></ul>
+      </div>
+
+      <div id="screen-forgot" class="card hidden">
+        <h3>Forgot Password</h3>
+        <div class="row">
+          <div class="col"><label>Email</label><input id="fpEmail" type="email" /></div>
+        </div>
+        <div style="margin-top:10px">
+          <button id="reqOtp" class="btn-success">Request OTP</button>
+        </div>
+        <div class="row" style="margin-top:10px">
+          <div class="col"><label>OTP</label><input id="fpOtp" /></div>
+          <div class="col"><label>New Password</label><input id="fpNew" type="password" /></div>
+        </div>
+        <div style="margin-top:10px">
+          <button id="doReset">Reset Password</button>
+          <button id="backLogin">⬅ Back to Login</button>
+        </div>
+      </div>
+
+      <div id="screen-trips" class="card hidden">
+        <h3>Trip Planner (North & Northeast India only)</h3>
+        <div class="row">
+          <div class="col"><label>Destination</label>
+            <select id="tripDest">
+              <option>Himachal Pradesh</option>
+              <option>Uttarakhand</option>
+              <option>Jammu & Kashmir</option>
+              <option>Ladakh</option>
+              <option>Sikkim</option>
+              <option>Assam</option>
+              <option>Meghalaya</option>
+              <option>Arunachal Pradesh</option>
+              <option>Nagaland</option>
+              <option>Mizoram</option>
+              <option>Tripura</option>
+              <option>Manipur</option>
+            </select>
+          </div>
+          <div class="col"><label>Start Date</label><input id="tripStart" type="date" /></div>
+          <div class="col"><label>End Date</label><input id="tripEnd" type="date" /></div>
+        </div>
+        <div style="margin-top:10px">
+          <button id="saveTrip" class="btn-success">Save Trip</button>
+          <button id="backHomeTrips">⬅ Back</button>
+        </div>
+        <h4 style="margin-top:14px">My Trips</h4>
+        <ul id="tripList"></ul>
+      </div>
+
+      <div id="screen-help" class="card hidden">
+        <h3>Help Centers Near Me</h3>
+        <div class="row">
+          <div class="col"><label>Type</label>
+            <select id="helpType">
+              <option value="">All</option>
+              <option value="police">Police</option>
+              <option value="hospital">Hospital</option>
+              <option value="fire">Fire</option>
+              <option value="ngo">NGO</option>
+            </select>
+          </div>
+          <div class="col"><label>Search radius (m)</label><input id="helpRadius" value="5000" /></div>
+        </div>
+        <ul id="helpList"></ul>
+        <div style="margin-top:10px"><button id="backHome4">⬅ Back</button></div>
+      </div>
+
+      <div id="screen-police" class="card hidden">
+        <h3>Police Dashboard</h3>
+        <div class="row">
+          <div class="col">
+            <div id="heatmap" style="height:280px; border:1px solid #334155; border-radius:12px;" class="center">Loading heatmap…</div>
+          </div>
+          <div class="col">
+            <table style="width:100%; border-collapse:collapse">
+              <thead>
+                <tr><th style="text-align:left; padding:6px;">Tourist</th><th style="text-align:left; padding:6px;">KYC</th><th style="text-align:left; padding:6px;">Last Location</th></tr>
+              </thead>
+              <tbody id="touristRows"></tbody>
+            </table>
+          </div>
+        </div>
+        <div style="margin-top:10px"><button id="backHome5">⬅ Back</button></div>
+      </div>
+    </div>
+
+    <button class="sos" id="sosBtn">SOS</button>
+    <div class="notif" id="notif"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <script>
+      // Register Service Worker
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+      }
+      const API = 'http://localhost:4000/api';
+      let token = null;
+      let user = null;
+      const screens = {
+        choice: document.getElementById('screen-auth-choice'),
+        signup: document.getElementById('screen-signup'),
+        login: document.getElementById('screen-login'),
+        kyc: document.getElementById('screen-kyc'),
+        home: document.getElementById('screen-home'),
+        map: document.getElementById('screen-map'),
+        alerts: document.getElementById('screen-alerts'),
+        efir: document.getElementById('screen-efir'),
+        help: document.getElementById('screen-help'),
+        police: document.getElementById('screen-police'),
+        contacts: document.getElementById('screen-contacts'),
+        forgot: document.getElementById('screen-forgot'),
+        efirAdmin: document.getElementById('screen-efir-admin'),
+        adminGeo: document.getElementById('screen-admin-geo'),
+        sosQueue: document.getElementById('screen-sos-queue')
+      };
+      function show(name){ Object.values(screens).forEach(s=>s.classList.add('hidden')); screens[name].classList.remove('hidden'); }
+
+      // IndexedDB helper for offline cache
+      const idb = {
+        db: null,
+        open(){
+          return new Promise((resolve, reject) => {
+            const r = indexedDB.open('st-db', 1);
+            r.onupgradeneeded = () => {
+              const d = r.result;
+              if (!d.objectStoreNames.contains('alerts')) d.createObjectStore('alerts', { keyPath: 'id' });
+              if (!d.objectStoreNames.contains('help')) d.createObjectStore('help', { keyPath: 'id' });
+              if (!d.objectStoreNames.contains('lastLocation')) d.createObjectStore('lastLocation', { keyPath: 'key' });
+            };
+            r.onsuccess = () => { this.db = r.result; resolve(); };
+            r.onerror = () => reject(r.error);
+          });
+        },
+        put(store, value){
+          return new Promise((res, rej) => {
+            const tx = this.db.transaction(store, 'readwrite');
+            tx.objectStore(store).put(value);
+            tx.oncomplete = () => res();
+            tx.onerror = () => rej(tx.error);
+          });
+        },
+        bulkPut(store, values){ return Promise.all(values.map(v => this.put(store, v))); },
+        getAll(store){
+          return new Promise((res, rej) => {
+            const tx = this.db.transaction(store, 'readonly');
+            const req = tx.objectStore(store).getAll();
+            req.onsuccess = () => res(req.result);
+            req.onerror = () => rej(req.error);
+          });
+        }
+      };
+      idb.open();
+
+      // i18n minimal
+      const i18n = {
+        en:{ welcome:"Welcome! Let's Get Started", signup:'Sign Up', login:'Log In', create_account:'Create Account', full_name:'Full Name', username:'Username', password:'Password', confirm_password:'Confirm Password', back:'Back', kyc_title:'KYC Verification', e_kyc:'e-KYC', video_kyc:'Video KYC', complete:'Complete', map_geofences_title:'Map & Geofences', simulate_move:'Simulate Move', alerts:'Alerts', efir:'E-FIR', category:'Category', when:'When', where:'Where (lat,lng)', description:'Description', submit:'Submit', destination:'Destination', start_date:'Start Date', end_date:'End Date', save_trip:'Save Trip', my_trips:'My Trips', help_centers_near_me:'Help Centers Near Me', help_type:'Type', search_radius:'Search radius (m)', police_dashboard_title:'Police Dashboard' },
+        hi:{ welcome:'स्वागत है! शुरू करें', signup:'साइन अप', login:'लॉग इन', create_account:'खाता बनाएँ', full_name:'पूरा नाम', username:'उपयोगकर्ता नाम', password:'पासवर्ड', confirm_password:'पासवर्ड की पुष्टि', back:'वापस', kyc_title:'केवाईसी सत्यापन', e_kyc:'ई-केवाईसी', video_kyc:'वीडियो केवाईसी', complete:'पूर्ण करें', map_geofences_title:'मानचित्र और जियोफेंस', simulate_move:'मूव सिमुलेट करें', alerts:'अलर्ट', efir:'ई-एफआईआर', category:'श्रेणी', when:'कब', where:'कहां (lat,lng)', description:'विवरण', submit:'जमा करें', destination:'गंतव्य', start_date:'प्रारंभ तिथि', end_date:'अंत तिथि', save_trip:'ट्रिप सहेजें', my_trips:'मेरी ट्रिप्स', help_centers_near_me:'नजदीकी सहायता केंद्र', help_type:'प्रकार', search_radius:'खोज त्रिज्या (मीटर)', police_dashboard_title:'पुलिस डैशबोर्ड' },
+        as:{ welcome:'স্বাগতম! আৰম্ভ কৰক', signup:'ছাইন আপ', login:'লগ ইন', create_account:'একাউণ্ট বনাওক', full_name:'সম্পূৰ্ণ নাম', username:'ব্যৱহাৰকাৰীৰ নাম', password:'পাছৱৰ্ড', confirm_password:'পাছৱৰ্ড নিশ্চিত কৰক', back:'ঘূৰি যাওক', kyc_title:'KYC প্ৰমাণীকৰণ', e_kyc:'ই-KYC', video_kyc:'ভিডিঅ’ KYC', complete:'সম্পূৰ্ণ কৰক', map_geofences_title:'মানচিত্ৰ আৰু জিঅ’ফেন্স', simulate_move:'সিমুলেট মুভ', alerts:'সতৰ্কবাৰ্তা', efir:'ই-এফআইআৰ', category:'বিভাগ', when:'কেতিয়া', where:'ক’ত (lat,lng)', description:'বিৱৰণ', submit:'দাখিল কৰক', destination:'গন্তব্যস্থল', start_date:'আৰম্ভৰ তাৰিখ', end_date:'সমাপ্তিৰ তাৰিখ', save_trip:'ভ্ৰমণ সংৰক্ষণ', my_trips:'মোৰ ভ্ৰমণ', help_centers_near_me:'কাষৰীয়া সহায় কেন্দ্ৰ', help_type:'ধৰণ', search_radius:'সন্ধান ব্যাসাৰ্ধ (m)', police_dashboard_title:'পুলিচ ডেছব’ৰ্ড' }
+      };
+      const langSel = document.getElementById('lang');
+      function applyI18n(){
+        const dict = i18n[langSel.value] || i18n.en;
+        document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(dict[k]) el.textContent = dict[k]; });
+      }
+      langSel.onchange = applyI18n; applyI18n();
+
+      // Theme toggle
+      document.getElementById('toggleTheme').onclick = () => {
+        const root = document.documentElement;
+        const isDark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#0b1220';
+        if(isDark){ root.style.setProperty('--bg','#f8fafc'); root.style.setProperty('--text','#0b1220'); document.body.style.background = 'linear-gradient(180deg,#e2e8f0,#f8fafc)'; }
+        else { root.style.setProperty('--bg','#0b1220'); root.style.setProperty('--text','#e5e7eb'); document.body.style.background = 'linear-gradient(180deg,#0b1220,#0f172a)'; }
+      };
+
+      // Nav
+      document.getElementById('goSignup').onclick=()=>show('signup');
+      document.getElementById('goLogin').onclick=()=>show('login');
+      // link to forgot
+      const forgotLink = document.createElement('button');
+      forgotLink.textContent = 'Forgot Password?';
+      forgotLink.style.marginLeft = '8px';
+      forgotLink.onclick = ()=>show('forgot');
+      document.getElementById('screen-login').querySelector('.row + .row').appendChild(forgotLink);
+      document.getElementById('backChoice').onclick=()=>show('choice');
+      document.getElementById('toSignup').onclick=()=>show('signup');
+
+      // Helpers
+      function setLoading(btn, on){ btn.disabled = !!on; btn.textContent = on ? 'Please wait…' : btn.getAttribute('data-i18n') ? (i18n[langSel.value]||i18n.en)[btn.getAttribute('data-i18n')] : btn._label||btn.textContent; }
+
+      // Signup
+      document.getElementById('btnSignup')._label = 'Sign Up';
+      document.getElementById('btnSignup').onclick = async (e) => {
+        const fullName = document.getElementById('suName').value.trim();
+        const email = document.getElementById('suEmail').value.trim();
+        const username = document.getElementById('suUser').value.trim();
+        const password = document.getElementById('suPass').value;
+        const pass2 = document.getElementById('suPass2').value;
+        const dob = document.getElementById('suDob').value;
+        const gender = document.getElementById('suGender').value;
+        const otp = document.getElementById('suOtp').value.trim();
+        const emailOk = /.+@.+\..+/.test(email);
+        if(!fullName||!email||!emailOk||!username||!password||password.length<6||!dob||!otp){
+          return alert('Please fill all fields (password≥6, valid email)');
+        }
+        if(password!==pass2) return alert('Passwords do not match');
+        if(otp!=='123456') return alert('Invalid OTP (use 123456)');
+        setLoading(e.target, true);
+        const res = await fetch(`${API}/auth/signup`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ fullName, email, username, password, dob, gender })}).catch(()=>({ ok:false }));
+        const data = await res.json();
+        if(!res.ok){ setLoading(e.target,false); return alert(data.error||'Signup failed'); }
+        token = data.token; user = data.user;
+        show('kyc');
+        loadKycUI();
+        setLoading(e.target, false);
+      };
+
+      // Login
+      document.getElementById('btnLogin')._label = 'Log In';
+      document.getElementById('btnLogin').onclick = async (e) => {
+        const username = document.getElementById('liUser').value.trim();
+        const password = document.getElementById('liPass').value;
+        if(!username||!password){ return alert('Enter username and password'); }
+        setLoading(e.target,true);
+        const res = await fetch(`${API}/auth/login`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ username, password })}).catch(()=>({ ok:false, json:async()=>({ error:'Network error' }) }));
+        const data = await res.json();
+        if(!res.ok){ setLoading(e.target,false); return alert(data.error||'Login failed'); }
+        token = data.token; user = data.user;
+        // After login, if KYC pending → go to KYC, else home
+        const k = await fetch(`${API}/kyc/me`, { headers:{ Authorization:`Bearer ${token}` }}).then(r=>r.json()).catch(()=>({ status:'pending' }));
+        if(k.status !== 'verified'){ show('kyc'); loadKycUI(); }
+        else { showHome(); }
+        setLoading(e.target,false);
+      };
+
+      // KYC UI
+      function loadKycUI(){
+        const box = document.getElementById('kyc-content');
+        let selected = 'e-kyc';
+        const render = () => {
+          if(selected==='e-kyc'){
+            box.innerHTML = `<div class="row"><div class="col"><label>Aadhaar Last 4</label><input id="aad4" maxlength="4" /></div><div class="col"><label>Name</label><input id="aadName" value="${user?.fullName||''}" /></div><div class="col"><label>DOB</label><input id="aadDob" type="date" /></div></div>`;
+          } else {
+            box.innerHTML = `<div class="row"><div class="col"><label>Selfie (simulate)</label><input type="file" /></div><div class="col"><label>Document Front</label><input type="file" /></div><div class="col"><small>Live officer call simulated</small></div></div>`;
+          }
+        };
+        render();
+        document.getElementById('tab-e-kyc').onclick=()=>{ selected='e-kyc'; document.getElementById('tab-e-kyc').classList.add('active'); document.getElementById('tab-video-kyc').classList.remove('active'); render(); };
+        document.getElementById('tab-video-kyc').onclick=()=>{ selected='video'; document.getElementById('tab-video-kyc').classList.add('active'); document.getElementById('tab-e-kyc').classList.remove('active'); render(); };
+        document.getElementById('btnCompleteKyc').onclick = async () => {
+          const start = await fetch(`${API}/kyc/start`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${token}` }, body: JSON.stringify({ method: selected==='e-kyc'?'e_kyc':'video_kyc', documentType: selected==='e-kyc'?'aadhaar':'passport' })}).then(r=>r.json());
+          if(selected==='e-kyc') await fetch(`${API}/kyc/verify-e-kyc`, { method:'POST', headers:{ Authorization:`Bearer ${token}` }});
+          else await fetch(`${API}/kyc/verify-video`, { method:'POST', headers:{ Authorization:`Bearer ${token}` }});
+          const done = await fetch(`${API}/kyc/complete`, { method:'POST', headers:{ Authorization:`Bearer ${token}` }}).then(r=>r.json());
+          if(done.ok){ user.kycStatus = 'verified'; showHome(); }
+        };
+      }
+
+      // Home
+      function showHome(){
+        document.getElementById('welcomeUser').textContent = `Welcome, ${user?.fullName||'User'}`;
+        show('home');
+      }
+      document.getElementById('goMap').onclick=()=>{ show('map'); initMap(); };
+      document.getElementById('goAlerts').onclick=()=>{ show('alerts'); loadAlerts(); };
+      document.getElementById('goEFIR').onclick=()=>{ show('efir'); };
+      document.getElementById('goTrips').onclick=()=>{ show('trips'); loadTrips(); };
+      document.getElementById('goHelp').onclick=()=>{ show('help'); loadHelpCenters(); };
+      document.getElementById('goPolice').onclick=()=>{ show('police'); loadPoliceDashboard(); };
+      document.getElementById('goContacts').onclick=()=>{ show('contacts'); loadContacts(); };
+      document.getElementById('goEfirAdmin').onclick=()=>{ show('efirAdmin'); loadEfirAdmin(); };
+      document.getElementById('goAdminGeo').onclick=()=>{ show('adminGeo'); loadGeofenceAdmin(); };
+      document.getElementById('goSosQueue').onclick=()=>{ show('sosQueue'); loadSosQueue(); };
+
+      // Map + Geofences
+      let map, marker, fences=[];
+      async function initMap(){
+        if(!map){
+          map = L.map('map').setView([26.172, 91.745], 13);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+        }
+        const res = await fetch(`${API}/geofences`).then(r=>r.json());
+        fences.forEach(f=>map.removeLayer(f.layer));
+        fences = res.map(f=>{
+          const color = f.risk_level==='danger'?'#ef4444':(f.risk_level==='medium'?'#f59e0b':'#22c55e');
+          const layer = L.circle([f.center.lat, f.center.lng], { radius: f.radius_m, color });
+          layer.addTo(map);
+          return { ...f, layer };
+        });
+        if(!marker){ marker = L.marker([26.172, 91.745]).addTo(map); }
+      }
+      document.getElementById('backHome').onclick=()=>show('home');
+      document.getElementById('mockMove').onclick=async ()=>{
+        const lat = 26.172 + (Math.random()-0.5)*0.02; const lng = 91.745 + (Math.random()-0.5)*0.02;
+        marker.setLatLng([lat,lng]);
+        if(token){
+          try { await fetch(`${API}/location`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${token}` }, body: JSON.stringify({ lat, lng })}); } catch {}
+          try { await idb.put('lastLocation', { key:'me', lat, lng, at: Date.now() }); } catch {}
+        }
+        // simple risk check
+        const dist = (a,b)=>Math.sqrt((a.lat-b.lat)**2 + (a.lng-b.lng)**2);
+        const hit = fences.find(f=> dist({lat,lng}, f.center) < (f.radius_m/111000));
+        if(hit && hit.risk_level==='danger') alert('⚠ High-risk zone. Stay alert or return.');
+      };
+
+      // Alerts
+      async function loadAlerts(){
+        const list = document.getElementById('alertList');
+        list.innerHTML='';
+        let data;
+        try {
+          data = await fetch(`${API}/alerts`).then(r=>r.json());
+          const toStore = data.map(a => ({ id: a.id, ...a }));
+          await idb.bulkPut('alerts', toStore);
+        } catch {
+          data = await idb.getAll('alerts');
+        }
+        data.forEach(a=>{
+          const li = document.createElement('li');
+          li.textContent = `${a.severity.toUpperCase()} • ${a.title} – ${a.description}`;
+          list.appendChild(li);
+        });
+      }
+      document.getElementById('backHome2').onclick=()=>show('home');
+
+      // E-FIR
+      document.getElementById('submitEfir')._label = 'Submit';
+      document.getElementById('submitEfir').onclick = async (e) => {
+        const category = document.getElementById('efirCat').value;
+        const when = document.getElementById('efirWhen').value;
+        const where = document.getElementById('efirWhere').value;
+        const description = document.getElementById('efirDesc').value;
+        if(!token) return alert('Login first');
+        let lat=null, lng=null; if(where.includes(',')){ const parts=where.split(','); lat=parseFloat(parts[0]); lng=parseFloat(parts[1]); }
+        setLoading(e.target,true);
+        const res = await fetch(`${API}/efir`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${token}` }, body: JSON.stringify({ category, subcategory:'', description, when, where:{lat,lng} })}).catch(()=>({ ok:false, json:async()=>({}) }));
+        const data = await res.json();
+        document.getElementById('efirResult').textContent = `FIR Submitted: No ${data.fir?.fir_number || data.fir?.firNumber}`;
+        setLoading(e.target,false);
+      };
+      document.getElementById('backHome3').onclick=()=>show('home');
+
+      // Trips
+      async function loadTrips(){
+        if(!token) return alert('Login first');
+        const trips = await fetch(`${API}/trips`, { headers:{ Authorization:`Bearer ${token}` } }).then(r=>r.json());
+        const ul = document.getElementById('tripList');
+        ul.innerHTML = '';
+        trips.forEach(t => {
+          const li = document.createElement('li');
+          li.style.padding='8px'; li.style.borderBottom='1px solid #334155';
+          li.textContent = `${t.destinationState} • ${t.startDate} → ${t.endDate} • ${t.status}`;
+          ul.appendChild(li);
+        });
+      }
+      document.getElementById('saveTrip')._label = 'Save Trip';
+      document.getElementById('saveTrip').onclick = async (e) => {
+        if(!token) return alert('Login first');
+        const destinationState = document.getElementById('tripDest').value;
+        const startDate = document.getElementById('tripStart').value;
+        const endDate = document.getElementById('tripEnd').value;
+        if(!destinationState||!startDate||!endDate) return alert('Missing fields');
+        setLoading(e.target,true);
+        const res = await fetch(`${API}/trips`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${token}` }, body: JSON.stringify({ destinationState, startDate, endDate })}).catch(()=>({ ok:false }));
+        if(!res.ok){ setLoading(e.target,false); return alert('Failed to save'); }
+        await loadTrips();
+        alert('Trip saved');
+        setLoading(e.target,false);
+      };
+      document.getElementById('backHomeTrips').onclick=()=>show('home');
+
+      // Help Centers
+      async function loadHelpCenters(){
+        const type = document.getElementById('helpType').value;
+        const radius = document.getElementById('helpRadius').value;
+        const near = '26.172,91.745';
+        const url = new URL(`${API}/help-centers`);
+        url.searchParams.set('near', near);
+        if (radius) url.searchParams.set('radius', radius);
+        if (type) url.searchParams.set('type', type);
+        let list;
+        try {
+          list = await fetch(url).then(r=>r.json());
+          const normalized = list.map(h => ({ id: h.id, ...h }));
+          await idb.bulkPut('help', normalized);
+        } catch {
+          list = await idb.getAll('help');
+          if (type) list = list.filter(h => h.type === type);
+        }
+        const ul = document.getElementById('helpList');
+        ul.innerHTML = '';
+        list.forEach(h => {
+          const li = document.createElement('li');
+          li.style.padding = '8px';
+          li.style.borderBottom = '1px solid #334155';
+          li.textContent = `${h.type.toUpperCase()} • ${h.name} • ${h.distance_m||'?'} m • ${h.phone}`;
+          ul.appendChild(li);
+        });
+      }
+      document.getElementById('helpType').onchange = loadHelpCenters;
+      document.getElementById('helpRadius').onchange = loadHelpCenters;
+      document.getElementById('backHome4').onclick=()=>show('home');
+
+      // Police Dashboard
+      let policeMap, heatLayer;
+      async function loadPoliceDashboard(){
+        // Heatmap on Leaflet
+        const heatDiv = document.getElementById('heatmap');
+        if(!policeMap){
+          policeMap = L.map('heatmap').setView([26.172, 91.745], 12);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(policeMap);
+        }
+        const points = await fetch(`${API}/dashboard/heatmap`).then(r=>r.json());
+        const heatData = points.map(p => [p.lat, p.lng, Math.min(1, p.count/5)]); // normalize
+        if(heatLayer){ policeMap.removeLayer(heatLayer); }
+        heatLayer = L.heatLayer(heatData, { radius: 20, blur: 15, maxZoom: 15 }).addTo(policeMap);
+        // Tourists table
+        const rows = await fetch(`${API}/dashboard/tourists`).then(r=>r.json());
+        const tbody = document.getElementById('touristRows');
+        tbody.innerHTML = '';
+        rows.forEach(r => {
+          const tr = document.createElement('tr');
+          const td1 = document.createElement('td'); td1.style.padding='6px'; td1.textContent = `${r.name} (@${r.username})`;
+          const td2 = document.createElement('td'); td2.style.padding='6px'; td2.textContent = r.kycStatus;
+          const td3 = document.createElement('td'); td3.style.padding='6px'; td3.textContent = r.lastLocation ? `${r.lastLocation.lat.toFixed(3)},${r.lastLocation.lng.toFixed(3)}` : '—';
+          tr.append(td1, td2, td3); tbody.appendChild(tr);
+        });
+      }
+      document.getElementById('backHome5').onclick=()=>show('home');
+
+      // Contacts
+      async function loadContacts(){
+        if(!token) return alert('Login first');
+        const list = await fetch(`${API}/contacts`, { headers:{ Authorization:`Bearer ${token}` } }).then(r=>r.json());
+        const ul = document.getElementById('contactList');
+        ul.innerHTML = '';
+        list.forEach(c => {
+          const li = document.createElement('li');
+          li.style.padding='8px'; li.style.borderBottom='1px solid #334155';
+          const del = document.createElement('button'); del.textContent='Delete'; del.style.marginLeft='8px';
+          del.onclick = async ()=>{ await fetch(`${API}/contacts/${c.id}`, { method:'DELETE', headers:{ Authorization:`Bearer ${token}` } }); loadContacts(); };
+          li.textContent = `${c.name} • ${c.phone} • p${c.priority}`; li.appendChild(del);
+          ul.appendChild(li);
+        });
+      }
+      document.getElementById('addContact').onclick = async () => {
+        if(!token) return alert('Login first');
+        const name = document.getElementById('ctName').value.trim();
+        const phone = document.getElementById('ctPhone').value.trim();
+        const priority = parseInt(document.getElementById('ctPrio').value||'1',10);
+        if(!name||!phone) return alert('Missing fields');
+        await fetch(`${API}/contacts`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${token}` }, body: JSON.stringify({ name, phone, priority })});
+        loadContacts();
+      };
+      document.getElementById('backHome6').onclick=()=>show('home');
+      document.getElementById('backHome7').onclick=()=>show('home');
+      document.getElementById('backHome8').onclick=()=>show('home');
+      document.getElementById('backHome9').onclick=()=>show('home');
+
+      // Forgot password
+      document.getElementById('reqOtp')._label='Request OTP';
+      document.getElementById('reqOtp').onclick = async (e) => {
+        const email = document.getElementById('fpEmail').value.trim();
+        if(!email) return alert('Enter email');
+        setLoading(e.target,true);
+        const res = await fetch(`${API}/auth/forgot`, { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ email })}).catch(()=>({ ok:false, json:async()=>({ error:'Network error' }) }));
+        const data = await res.json();
+        if(!res.ok){ setLoading(e.target,false); return alert(data.error||'Failed'); }
+        alert(`OTP (demo): ${data.otp}`);
+        setLoading(e.target,false);
+      };
+      document.getElementById('doReset')._label='Reset Password';
+      document.getElementById('doReset').onclick = async (e) => {
+        const email = document.getElementById('fpEmail').value.trim();
+        const otp = document.getElementById('fpOtp').value.trim();
+        const newPassword = document.getElementById('fpNew').value;
+        if(!email||!otp||!newPassword||newPassword.length<6) return alert('Enter email, OTP and password≥6');
+        setLoading(e.target,true);
+        const res = await fetch(`${API}/auth/reset`, { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ email, otp, newPassword })}).catch(()=>({ ok:false, json:async()=>({ error:'Network error' }) }));
+        const data = await res.json();
+        if(!res.ok){ setLoading(e.target,false); return alert(data.error||'Failed'); }
+        alert('Password reset. Please log in.');
+        show('login');
+        setLoading(e.target,false);
+      };
+      document.getElementById('backLogin').onclick=()=>show('login');
+
+      // E-FIR Admin list
+      async function loadEfirAdmin(){
+        if(!token || (user && user.role !== 'police')){ alert('Police login required'); show('home'); return; }
+        const rows = await fetch(`${API}/efir`, { headers:{ Authorization:`Bearer ${token}` } }).then(r=>{ if(!r.ok) throw new Error('forbidden'); return r.json(); });
+        const tbody = document.getElementById('efirRows');
+        tbody.innerHTML = '';
+        rows.forEach(r => {
+          const tr = document.createElement('tr');
+          const td1 = document.createElement('td'); td1.style.padding='6px'; td1.textContent = r.fir_number || '—';
+          const td2 = document.createElement('td'); td2.style.padding='6px'; td2.textContent = r.user_id || '—';
+          const td3 = document.createElement('td'); td3.style.padding='6px'; td3.textContent = `${r.category}${r.subcategory?(' / '+r.subcategory):''}`;
+          const td4 = document.createElement('td'); td4.style.padding='6px'; td4.textContent = r.incident_time ? new Date(r.incident_time).toLocaleString() : '—';
+          const td5 = document.createElement('td'); td5.style.padding='6px'; td5.textContent = (r.lat && r.lng) ? `${Number(r.lat).toFixed(3)},${Number(r.lng).toFixed(3)}` : '—';
+          const td6 = document.createElement('td'); td6.style.padding='6px'; td6.textContent = r.status || '—';
+          tr.append(td1, td2, td3, td4, td5, td6); tbody.appendChild(tr);
+        });
+      }
+
+      // Geofence Admin
+      async function loadGeofenceAdmin(){
+        if(!token || (user && user.role !== 'police')){ alert('Police login required'); show('home'); return; }
+        const list = await fetch(`${API}/geofences`).then(r=>r.json());
+        const ul = document.getElementById('fenceList');
+        ul.innerHTML = '';
+        list.forEach(g => {
+          const li = document.createElement('li');
+          li.style.padding='8px'; li.style.borderBottom='1px solid #334155';
+          const del = document.createElement('button'); del.textContent='Delete'; del.style.marginLeft='8px';
+          del.onclick = async ()=>{ await fetch(`${API}/admin/geofences/${g.id}`, { method:'DELETE', headers:{ Authorization:`Bearer ${token}` } }); loadGeofenceAdmin(); };
+          li.textContent = `${g.name} • ${g.risk_level} • r=${g.radius_m}m @ ${g.center.lat},${g.center.lng}`; li.appendChild(del);
+          ul.appendChild(li);
+        });
+      }
+      document.getElementById('addFence').onclick = async () => {
+        if(!token || (user && user.role !== 'police')){ alert('Police login required'); show('home'); return; }
+        const name = document.getElementById('gfName').value.trim();
+        const center = document.getElementById('gfCenter').value.trim();
+        const radius_m = parseInt(document.getElementById('gfRadius').value||'400',10);
+        const risk_level = document.getElementById('gfRisk').value;
+        const [lat,lng] = center.split(',').map(x=>parseFloat(x.trim()));
+        await fetch(`${API}/admin/geofences`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${token}` }, body: JSON.stringify({ name, center:{lat,lng}, radius_m, risk_level }) });
+        loadGeofenceAdmin();
+      };
+
+      // SOS Queue
+      async function loadSosQueue(){
+        if(!token || (user && user.role !== 'police')){ alert('Police login required'); show('home'); return; }
+        const list = await fetch(`${API}/admin/sos`, { headers:{ Authorization:`Bearer ${token}` } }).then(r=>r.json());
+        const ul = document.getElementById('sosList');
+        ul.innerHTML='';
+        list.forEach(s => {
+          const li = document.createElement('li');
+          li.style.padding='8px'; li.style.borderBottom='1px solid #334155';
+          const ack = document.createElement('button'); ack.textContent='Acknowledge'; ack.style.marginLeft='8px';
+          ack.onclick = async ()=>{ await fetch(`${API}/admin/sos/${s.id}/ack`, { method:'POST', headers:{ Authorization:`Bearer ${token}` } }); loadSosQueue(); };
+          const res = document.createElement('button'); res.textContent='Resolve'; res.style.marginLeft='8px';
+          res.onclick = async ()=>{ await fetch(`${API}/admin/sos/${s.id}/resolve`, { method:'POST', headers:{ Authorization:`Bearer ${token}` } }); loadSosQueue(); };
+          li.textContent = `${s.status.toUpperCase()} • ${s.mode} • ${s.location?`${s.location.lat.toFixed(3)},${s.location.lng.toFixed(3)}`:'—'} • ${new Date(s.created_at).toLocaleTimeString()}`;
+          li.append(ack, res); ul.appendChild(li);
+        });
+      }
+
+      // SOS
+      // Notifications helper
+      function pushToast(text){
+        const box = document.getElementById('notif');
+        const t = document.createElement('div'); t.className='toast'; t.textContent = text;
+        box.appendChild(t); setTimeout(()=>{ t.remove(); }, 5000);
+      }
+
+      // SOS helpers
+      let sosHoldTimer = null;
+      async function sendSOS(mode){
+        if(!token) return alert('Login first');
+        try {
+          const res = await fetch(`${API}/sos`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${token}` }, body: JSON.stringify({ mode, notify:['police','ambulance','fire'], shareLive:true, location: { lat:26.172, lng:91.745 } })});
+          if(!res.ok) throw new Error('fail');
+          pushToast(mode==='silent' ? 'Silent SOS sent' : 'SOS sent');
+          // Escalation after 60s (demo)
+          setTimeout(()=>{ pushToast('Escalation: notifying backup contacts and police control room'); }, 60000);
+        } catch { pushToast('SOS failed'); }
+      }
+
+      // Tap SOS (normal)
+      document.getElementById('sosBtn').onclick = async () => {
+        const allow = confirm('Send SOS with last known location?');
+        if(!allow) return; sendSOS('manual');
+      };
+      // Hold SOS for 2s → Silent SOS
+      const sosBtn = document.getElementById('sosBtn');
+      sosBtn.addEventListener('mousedown', ()=>{ sosHoldTimer = setTimeout(()=> sendSOS('silent'), 2000); });
+      sosBtn.addEventListener('mouseup', ()=>{ if(sosHoldTimer){ clearTimeout(sosHoldTimer); sosHoldTimer=null; } });
+      sosBtn.addEventListener('mouseleave', ()=>{ if(sosHoldTimer){ clearTimeout(sosHoldTimer); sosHoldTimer=null; } });
+
+      // Keyboard silent trigger: press "S" 3 times in 3 seconds
+      let sPresses = [];
+      document.addEventListener('keydown', (e)=>{
+        if(e.key.toLowerCase()==='s'){
+          const now = Date.now();
+          sPresses = sPresses.filter(t=> now - t < 3000);
+          sPresses.push(now);
+          if(sPresses.length>=3){ sPresses=[]; sendSOS('silent'); }
+        }
+      });
+
+      // start at auth choice
+      show('choice');
+    </script>
+  </body>
+  </html>
+
+
