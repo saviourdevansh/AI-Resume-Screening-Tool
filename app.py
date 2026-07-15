@@ -403,6 +403,16 @@ def download_resume(filename):
         as_attachment=True
     )
 
+@app.route("/history")
+def history():
+
+    candidates = get_candidates()
+
+    return render_template(
+        "history.html",
+        candidates=candidates
+    )
+
 # ---------------------------------------
 # Run App
 # ---------------------------------------
