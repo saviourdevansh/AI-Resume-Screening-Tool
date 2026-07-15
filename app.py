@@ -15,9 +15,11 @@ from utils.recruiter import rank_candidates
 from utils.openrouter import generate_ai_feedback
 from utils.pdf_report import create_pdf
 from markdown import markdown
+from flask import send_from_directory
 
 import os
 
+candidate_data = {}
 last_candidate = {}
 
 app = Flask(__name__)
@@ -34,6 +36,11 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route("/")
 def home():
+    return render_template("home.html")
+
+
+@app.route("/single")
+def single():
     return render_template("index.html")
 
 
@@ -198,6 +205,8 @@ def upload():
     )
 
 
+
+
 # ---------------------------------------
 # Multiple Resume Ranking
 # ---------------------------------------
@@ -214,11 +223,18 @@ def rank():
     if not files:
         return "No Resumes Uploaded"
 
-    candidates = rank_candidates(
-        files,
-        app.config["UPLOAD_FOLDER"],
-        job_description
-    )
+global candidate_data
+
+candidates = rank_candidates(
+    files,
+    app.config["UPLOAD_FOLDER"],
+    job_description
+)
+
+candidate_data = {}
+
+for c in candidates:
+    candidate_data[c["resume_file"]] = c
 
     # CSV Save
     csv_file = os.path.join(
@@ -341,6 +357,38 @@ def ai_review():
         ai_feedback=ai_feedback
     )
 
+@app.route("/candidate/<filename>")
+def candidate_details(filename):
+
+    global candidate_data
+
+    if filename not in candidate_data:
+        return "Candidate Not Found"
+
+    candidate = candidate_data[filename]
+
+    return render_template(
+        "candidate.html",
+        candidate=candidate
+    )
+
+
+@app.route("/resume/<filename>")
+def open_resume(filename):
+
+    return send_from_directory(
+        app.config["UPLOAD_FOLDER"],
+        filename
+    )
+
+@app.route("/download_resume/<filename>")
+def download_resume(filename):
+
+    return send_from_directory(
+        app.config["UPLOAD_FOLDER"],
+        filename,
+        as_attachment=True
+    )
 
 # ---------------------------------------
 # Run App

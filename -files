@@ -105,4 +105,99 @@ Date:   Tue Jul 14 20:32:48 2026 +0530
  .../reportlab/fonts/DarkGarden-copying.txt         |    26 [32m+[m
  .../reportlab/fonts/DarkGarden-readme.txt          |   106 [32m+[m
  .../site-packages/reportlab/fonts/DarkGarden.sfd   | 11067 [32m+++++++++++++++++++[m
- .../site-packages/reportlab/fonts/DarkGardenMK.afm |   4
+ .../site-packages/reportlab/fonts/DarkGardenMK.afm |   429 [32m+[m
+ .../site-packages/reportlab/fonts/DarkGardenMK.pfb |   Bin [31m0[m -> [32m79824[m bytes
+ venv/Lib/site-packages/reportlab/fonts/Vera.ttf    |   Bin [31m0[m -> [32m65932[m bytes
+ venv/Lib/site-packages/reportlab/fonts/VeraBI.ttf  |   Bin [31m0[m -> [32m63208[m bytes
+ venv/Lib/site-packages/reportlab/fonts/VeraBd.ttf  |   Bin [31m0[m -> [32m58716[m bytes
+ venv/Lib/site-packages/reportlab/fonts/VeraIt.ttf  |   Bin [31m0[m -> [32m63684[m bytes
+ .../Lib/site-packages/reportlab/fonts/_a______.pfb |   Bin [31m0[m -> [32m32084[m bytes
+ .../Lib/site-packages/reportlab/fonts/_ab_____.pfb |   Bin [31m0[m -> [32m31966[m bytes
+ .../Lib/site-packages/reportlab/fonts/_abi____.pfb |   Bin [31m0[m -> [32m32019[m bytes
+ .../Lib/site-packages/reportlab/fonts/_ai_____.pfb |   Bin [31m0[m -> [32m32115[m bytes
+ .../Lib/site-packages/reportlab/fonts/_eb_____.pfb |   Bin [31m0[m -> [32m35377[m bytes
+ .../Lib/site-packages/reportlab/fonts/_ebi____.pfb |   Bin [31m0[m -> [32m38543[m bytes
+ .../Lib/site-packages/reportlab/fonts/_ei_____.pfb |   Bin [31m0[m -> [32m37518[m bytes
+ .../Lib/site-packages/reportlab/fonts/_er_____.pfb |   Bin [31m0[m -> [32m35380[m bytes
+ .../reportlab/fonts/bitstream-vera-license.txt     |   124 [32m+[m
+ .../Lib/site-packages/reportlab/fonts/callig15.afm |   191 [32m+[m
+ .../Lib/site-packages/reportlab/fonts/callig15.pfb |   Bin [31m0[m -> [32m59663[m bytes
+ .../Lib/site-packages/reportlab/fonts/cob_____.pfb |   Bin [31m0[m -> [32m35500[m bytes
+ .../Lib/site-packages/reportlab/fonts/cobo____.pfb |   Bin [31m0[m -> [32m50532[m bytes
+ .../Lib/site-packages/reportlab/fonts/com_____.pfb |   Bin [31m0[m -> [32m34585[m bytes
+ .../Lib/site-packages/reportlab/fonts/coo_____.pfb |   Bin [31m0[m -> [32m48468[m bytes
+ venv/Lib/site-packages/reportlab/fonts/hb-test.ttf |   Bin [31m0[m -> [32m3284[m bytes
+ .../Lib/site-packages/reportlab/fonts/sy______.pfb |   Bin [31m0[m -> [32m34705[m bytes
+ .../Lib/site-packages/reportlab/fonts/zd______.pfb |   Bin [31m0[m -> [32m49593[m bytes
+ .../Lib/site-packages/reportlab/fonts/zx______.pfb |   Bin [31m0[m -> [32m75573[m bytes
+ .../Lib/site-packages/reportlab/fonts/zy______.pfb |   Bin [31m0[m -> [32m96418[m bytes
+ .../site-packages/reportlab/graphics/__init__.py   |     6 [32m+[m
+ .../graphics/__pycache__/__init__.cpython-312.pyc  |   Bin [31m0[m -> [32m330[m bytes
+ .../graphics/__pycache__/renderPDF.cpython-312.pyc |   Bin [31m0[m -> [32m20393[m bytes
+ .../graphics/__pycache__/renderPM.cpython-312.pyc  |   Bin [31m0[m -> [32m44549[m bytes
+ .../graphics/__pycache__/renderPS.cpython-312.pyc  |   Bin [31m0[m -> [32m47951[m bytes
+ .../graphics/__pycache__/renderSVG.cpython-312.pyc |   Bin [31m0[m -> [32m50783[m bytes
+ .../__pycache__/renderbase.cpython-312.pyc         |   Bin [31m0[m -> [32m16509[m bytes
+ .../graphics/__pycache__/shapes.cpython-312.pyc    |   Bin [31m0[m -> [32m77120[m bytes
+ .../graphics/__pycache__/svgpath.cpython-312.pyc   |   Bin [31m0[m -> [32m17214[m bytes
+ .../__pycache__/testdrawings.cpython-312.pyc       |   Bin [31m0[m -> [32m3030[m bytes
+ .../__pycache__/testshapes.cpython-312.pyc         |   Bin [31m0[m -> [32m24829[m bytes
+ .../graphics/__pycache__/transform.cpython-312.pyc |   Bin [31m0[m -> [32m5241[m bytes
+ .../graphics/__pycache__/utils.cpython-312.pyc     |   Bin [31m0[m -> [32m14299[m bytes
+ .../__pycache__/widgetbase.cpython-312.pyc         |   Bin [31m0[m -> [32m35875[m bytes
+ .../reportlab/graphics/barcode/__init__.py         |   152 [32m+[m
+ .../barcode/__pycache__/__init__.cpython-312.pyc   |   Bin [31m0[m -> [32m4994[m bytes
+ .../barcode/__pycache__/code128.cpython-312.pyc    |   Bin [31m0[m -> [32m21573[m bytes
+ .../barcode/__pycache__/code39.cpython-312.pyc     |   Bin [31m0[m -> [32m11178[m bytes
+ .../barcode/__pycache__/code93.cpython-312.pyc     |   Bin [31m0[m -> [32m11035[m bytes
+ .../barcode/__pycache__/common.cpython-312.pyc     |   Bin [31m0[m -> [32m31530[m bytes
+ .../barcode/__pycache__/dmtx.cpython-312.pyc       |   Bin [31m0[m -> [32m14469[m bytes
+ .../barcode/__pycache__/eanbc.cpython-312.pyc      |   Bin [31m0[m -> [32m24423[m bytes
+ .../__pycache__/ecc200datamatrix.cpython-312.pyc   |   Bin [31m0[m -> [32m23626[m bytes
+ .../barcode/__pycache__/fourstate.cpython-312.pyc  |   Bin [31m0[m -> [32m2866[m bytes
+ .../barcode/__pycache__/lto.cpython-312.pyc        |   Bin [31m0[m -> [32m9360[m bytes
+ .../barcode/__pycache__/qr.cpython-312.pyc         |   Bin [31m0[m -> [32m9455[m bytes
+ .../barcode/__pycache__/qrencoder.cpython-312.pyc  |   Bin [31m0[m -> [32m53784[m bytes
+ .../barcode/__pycache__/test.cpython-312.pyc       |   Bin [31m0[m -> [32m16322[m bytes
+ .../barcode/__pycache__/usps.cpython-312.pyc       |   Bin [31m0[m -> [32m9088[m bytes
+ .../barcode/__pycache__/usps4s.cpython-312.pyc     |   Bin [31m0[m -> [32m23500[m bytes
+ .../barcode/__pycache__/widgets.cpython-312.pyc    |   Bin [31m0[m -> [32m15824[m bytes
+ .../reportlab/graphics/barcode/code128.py          |   460 [32m+[m
+ .../reportlab/graphics/barcode/code39.py           |   244 [32m+[m
+ .../reportlab/graphics/barcode/code93.py           |   234 [32m+[m
+ .../reportlab/graphics/barcode/common.py           |   775 [32m++[m
+ .../reportlab/graphics/barcode/dmtx.py             |   273 [32m+[m
+ .../reportlab/graphics/barcode/eanbc.py            |   574 [32m+[m
+ .../reportlab/graphics/barcode/ecc200datamatrix.py |   445 [32m+[m
+ .../reportlab/graphics/barcode/fourstate.py        |    77 [32m+[m
+ .../reportlab/graphics/barcode/lto.py              |   195 [32m+[m
+ .../site-packages/reportlab/graphics/barcode/qr.py |   197 [32m+[m
+ .../reportlab/graphics/barcode/qrencoder.py        |  1130 [32m++[m
+ .../reportlab/graphics/barcode/test.py             |   280 [32m+[m
+ .../reportlab/graphics/barcode/usps.py             |   232 [32m+[m
+ .../reportlab/graphics/barcode/usps4s.py           |   465 [32m+[m
+ .../reportlab/graphics/barcode/widgets.py          |   357 [32m+[m
+ .../reportlab/graphics/charts/__init__.py          |     5 [32m+[m
+ .../charts/__pycache__/__init__.cpython-312.pyc    |   Bin [31m0[m -> [32m291[m bytes
+ .../charts/__pycache__/areas.cpython-312.pyc       |   Bin [31m0[m -> [32m4882[m bytes
+ .../charts/__pycache__/axes.cpython-312.pyc        |   Bin [31m0[m -> [32m110794[m bytes
+ .../charts/__pycache__/barcharts.cpython-312.pyc   |   Bin [31m0[m -> [32m96574[m bytes
+ .../charts/__pycache__/dotbox.cpython-312.pyc      |   Bin [31m0[m -> [32m8530[m bytes
+ .../charts/__pycache__/doughnut.cpython-312.pyc    |   Bin [31m0[m -> [32m19764[m bytes
+ .../charts/__pycache__/legends.cpython-312.pyc     |   Bin [31m0[m -> [32m31663[m bytes
+ .../charts/__pycache__/linecharts.cpython-312.pyc  |   Bin [31m0[m -> [32m35165[m bytes
+ .../charts/__pycache__/lineplots.cpython-312.pyc   |   Bin [31m0[m -> [32m63297[m bytes
+ .../charts/__pycache__/markers.cpython-312.pyc     |   Bin [31m0[m -> [32m2596[m bytes
+ .../charts/__pycache__/piecharts.cpython-312.pyc   |   Bin [31m0[m -> [32m87280[m bytes
+ .../charts/__pycache__/slidebox.cpython-312.pyc    |   Bin [31m0[m -> [32m10947[m bytes
+ .../charts/__pycache__/spider.cpython-312.pyc      |   Bin [31m0[m -> [32m20585[m bytes
+ .../charts/__pycache__/textlabels.cpython-312.pyc  |   Bin [31m0[m -> [32m27404[m bytes
+ .../charts/__pycache__/utils.cpython-312.pyc       |   Bin [31m0[m -> [32m21355[m bytes
+ .../charts/__pycache__/utils3d.cpython-312.pyc     |   Bin [31m0[m -> [32m11059[m bytes
+ .../reportlab/graphics/charts/areas.py             |    94 [32m+[m
+ .../reportlab/graphics/charts/axes.py              |  2303 [32m++++[m
+ .../reportlab/graphics/charts/barcharts.py         |  2434 [32m++++[m
+ .../reportlab/graphics/charts/dotbox.py            |   165 [32m+[m
+ .../reportlab/graphics/charts/doughnut.py          |   473 [32m+[m
+ .../reportlab/graphics/charts/legends.py           |   647 [32m++[m
+ .../reportlab/graphics/charts/linechart

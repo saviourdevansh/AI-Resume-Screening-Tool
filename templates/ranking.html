@@ -45,9 +45,7 @@ function searchCandidate() {
 <h1>🏆 Candidate Ranking Dashboard</h1>
 
 <p>
-
 Candidates Ranked According to ATS Score
-
 </p>
 
 </div>
@@ -56,7 +54,7 @@ Candidates Ranked According to ATS Score
 
 <div class="card-body">
 
-    <div class="row text-center mb-4">
+<div class="row text-center mb-4">
 
 <div class="col-md-4">
 
@@ -66,11 +64,7 @@ Candidates Ranked According to ATS Score
 
 <h5>Total Candidates</h5>
 
-<h2>
-
-{{ candidates|length }}
-
-</h2>
+<h2>{{ candidates|length }}</h2>
 
 </div>
 
@@ -84,11 +78,7 @@ Candidates Ranked According to ATS Score
 
 <h5>Highest ATS</h5>
 
-<h2>
-
-{{ candidates[0].ats_score }}
-
-</h2>
+<h2>{{ candidates[0].ats_score }}</h2>
 
 </div>
 
@@ -102,11 +92,7 @@ Candidates Ranked According to ATS Score
 
 <h5>Top Candidate</h5>
 
-<h5>
-
-{{ candidates[0].name }}
-
-</h5>
+<h5>{{ candidates[0].name }}</h5>
 
 </div>
 
@@ -119,15 +105,10 @@ Candidates Ranked According to ATS Score
 <div class="col-md-6">
 
 <input
-
 id="search"
-
 type="text"
-
 class="form-control"
-
 placeholder="🔍 Search Candidate..."
-
 onkeyup="searchCandidate()">
 
 </div>
@@ -155,6 +136,7 @@ onkeyup="searchCandidate()">
 <th>Projects</th>
 
 <th>Certificates</th>
+<th>Resume</th>
 
 </tr>
 
@@ -168,33 +150,27 @@ onkeyup="searchCandidate()">
 
 <td>
 
-{% if candidate.rank==1 %}
-
+{% if candidate.rank == 1 %}
 🥇
-
-{% elif candidate.rank==2 %}
-
+{% elif candidate.rank == 2 %}
 🥈
-
-{% elif candidate.rank==3 %}
-
+{% elif candidate.rank == 3 %}
 🥉
-
 {% else %}
-
 {{ candidate.rank }}
-
 {% endif %}
 
 </td>
 
 <td>
 
-<b>
+<a
+href="{{ url_for('candidate_details', filename=candidate.resume_file) }}"
+class="fw-bold text-decoration-none">
 
-{{ candidate.name }}
+👤 {{ candidate.name }}
 
-</b>
+</a>
 
 </td>
 
@@ -220,9 +196,7 @@ onkeyup="searchCandidate()">
 
 <td>
 
-{{ candidate.experience }}
-
-Years
+{{ candidate.experience }} Years
 
 </td>
 
@@ -235,6 +209,26 @@ Years
 <td>
 
 {{ candidate.certifications|length }}
+
+</td>
+
+<td>
+
+<a
+href="{{ url_for('candidate_details', filename=candidate.resume_file) }}"
+class="btn btn-sm btn-primary">
+
+👤 Details
+
+</a>
+
+<a
+href="{{ url_for('download_resume', filename=candidate.resume_file) }}"
+class="btn btn-sm btn-success">
+
+⬇️ Download
+
+</a>
 
 </td>
 
@@ -255,10 +249,9 @@ class="btn btn-warning">
 
 📥 Download CSV
 
-</a>    
+</a>
 
 <a href="/recruiter"
-
 class="btn btn-success">
 
 Analyze More Resumes
@@ -266,10 +259,9 @@ Analyze More Resumes
 </a>
 
 <a href="/"
-
 class="btn btn-primary">
 
-Home
+🏠 Home
 
 </a>
 

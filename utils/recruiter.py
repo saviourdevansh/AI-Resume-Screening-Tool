@@ -8,6 +8,7 @@ from utils.education import extract_education
 from utils.projects import extract_projects
 from utils.certifications import extract_certifications
 from utils.ranking import calculate_match
+from utils.ai_feedback import generate_ai_feedback
 
 
 def analyze_candidate(filepath, job_description):
@@ -40,8 +41,25 @@ def analyze_candidate(filepath, job_description):
         sections["certifications"] if sections["certifications"].strip() else resume_text
     )
 
+# AI Feedback
+try:
+
+    ai_feedback = generate_ai_feedback(
+        resume_text[:1500],
+        job_description[:700]
+    )
+
+except Exception:
+
+    ai_feedback = "AI Review Not Available"
+
     return {
+
         "name": os.path.basename(filepath),
+
+        "resume_file": os.path.basename(filepath),
+
+        "path": filepath,
 
         "ats_score": result["ats_score"],
 
@@ -59,7 +77,10 @@ def analyze_candidate(filepath, job_description):
 
         "certifications": certifications,
 
-        "resume_skills": resume_skills
+        "resume_skills": resume_skills,
+
+        "ai_feedback": ai_feedback
+
     }
 
 

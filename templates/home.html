@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>AI Resume Screening Platform</title>
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+<div class="container py-5">
+
+<div class="row align-items-center py-5">
+
+<div class="col-lg-6">
+
+<h1 class="gradient-text">
+
+🤖 AI Resume Screening Platform
+
+</h1>
+
+<p class="mt-4">
+
+Hire Smarter. Screen Faster.
+
+<br><br>
+
+Analyze resumes using Artificial Intelligence, calculate ATS scores,
+compare skills with Job Descriptions and rank candidates instantly.
+
+</p>
+
+<div class="top-btns mt-4">
+
+<a href="/single" class="btn btn-primary btn-lg">
+
+🚀 Analyze Resume
+
+</a>
+
+<a href="/recruiter" class="btn btn-success btn-lg">
+
+👥 Recruiter Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="workflow-card glass">
+
+<div class="workflow-step">
+
+<div class="workflow-icon">
+
+📄
+
+</div>
+
+<div>
+
+<h4>Upload Resume</h4>
+
+<p>Select Resume PDF</p>
+
+</div>
+
+</div>
+
+<div class="workflow-arrow">
+
+↓
+
+</div>
+
+<div class="workflow-step">
+
+<div class="workflow-icon">
+
+🤖
+
+</div>
+
+<div>
+
+<h4>AI Analysis</h4>
+
+<p>Extract Skills & Experience</p>
+
+</div>
+
+</div>
+
+<div class="workflow-arrow">
+
+↓
+
+</div>
+
+<div class="workflow-step">
+
+<div class="workflow-icon">
+
+📊
+
+</div>
+
+<div>
+
+<h4>ATS Score</h4>
+
+<p>Match With Job Description</p>
+
+</div>
+
+</div>
+
+<div class="workflow-arrow">
+
+↓
+
+</div>
+
+<div class="workflow-step">
+
+<div class="workflow-icon">
+
+🏆
+
+</div>
+
+<div>
+
+<h4>Final Report</h4>
+
+<p>AI Review & Ranking</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="row g-4">
+
+    <div class="row justify-content-center g-4 mt-3">
+
+<div class="col-lg-5 col-md-6">
+
+<div class="feature-box glass fade-up h-100">
+
+<div class="icon-circle">
+
+<i class="bi bi-person-workspace"></i>
+
+</div>
+
+<h3 class="mb-3">
+
+Single Resume Analysis
+
+</h3>
+
+<p class="mb-4">
+
+Perfect for students and job seekers who want to analyze one resume, calculate ATS score, generate AI feedback and download a professional report.
+
+</p>
+
+<ul class="list-group list-group-flush mb-4">
+
+<li class="list-group-item border-0">
+✅ ATS Score Analysis
+</li>
+
+<li class="list-group-item border-0">
+✅ AI Resume Review
+</li>
+
+<li class="list-group-item border-0">
+✅ Skill Matching
+</li>
+
+<li class="list-group-item border-0">
+✅ PDF Report
+</li>
+
+</ul>
+
+<a href="/single"
+
+class="btn btn-primary btn-lg w-100">
+
+🚀 Start Analysis
+
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-5 col-md-6">
+
+<div class="feature-box glass fade-up h-100">
+
+<div class="icon-circle">
+
+<i class="bi bi-people-fill"></i>
+
+</div>
+
+<h3 class="mb-3">
+
+Recruiter Dashboard
+
+</h3>
+
+<p class="mb-4">
+
+Designed for recruiters and HR teams to upload multiple resumes, rank candidates, compare ATS scores and download reports.
+
+</p>
+
+<ul class="list-group list-group-flush mb-4">
+
+<li class="list-group-item border-0">
+✅ Multiple Resume Ranking
+</li>
+
+<li class="list-group-item border-0">
+✅ Candidate Comparison
+</li>
+
+<li class="list-group-item border-0">
+✅ CSV Export
+</li>
+
+<li class="list-group-item border-0">
+✅ Resume Viewer
+</li>
+
+</ul>
+
+<a href="/recruiter"
+
+class="btn btn-success btn-lg w-100">
+
+👥 Open Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="row mt-5 g-4">
+
+
+
+<div class="col-lg-3 col-md-6">
+
+<div class="stats-card">
+
+<div class="icon-circle">
+
+<i class="bi bi-graph-up-arrow"></i>
+
+</div>
+
+<h2>95%</h2>
+
+<h5>ATS Accuracy</h5>
+
+<p>
+
+Advanced skill matching and resume analysis.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="stats-card">
+
+<div class="icon-circle">
+
+<i class="bi bi-people-fill"></i>
+
+</div>
+
+<h2>500+</h2>
+
+<h5>Recruiters</h5>
+
+<p>
+
+Designed for recruiters to compare and rank candidates.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="stats-card">
+
+<div class="icon-circle">
+
+<i class="bi bi-cpu-fill"></i>
+
+</div>
+
+<h2>AI</h2>
+
+<h5>Powered</h5>
+
+<p>
+
+Generate intelligent resume reviews using AI.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="row mt-5">
+
+<div class="col-lg-12">
+
+<div class="upload-card glass">
+
+<div class="text-center">
+
+<h2 class="gradient-text mb-4">
+
+Why Choose Our Platform?
+
+</h2>
+
+<p class="mb-5">
+
+A complete AI-powered solution for both job seekers and recruiters.
+
+</p>
+
+</div>
+
+<div class="row text-center g-4">
+
+<div class="col-md-3">
+
+<div class="feature-box h-100">
+
+<div class="icon-circle">
+
+<i class="bi bi-lightning-charge-fill"></i>
+
+</div>
+
+<h4>Fast Analysis</h4>
+
+<p>
+
+Analyze resumes within seconds using AI-powered ATS scoring.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="feature-box h-100">
+
+<div class="icon-circle">
+
+<i class="bi bi-shield-check"></i>
+
+</div>
+
+<h4>Reliable</h4>
+
+<p>
+
+Accurate skill matching with recruiter-friendly reports.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="feature-box h-100">
+
+<div class="icon-circle">
+
+<i class="bi bi-bar-chart-line-fill"></i>
+
+</div>
+
+<h4>Smart Ranking</h4>
+
+<p>
+
+Automatically rank candidates according to ATS score.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="feature-box h-100">
+
+<div class="icon-circle">
+
+<i class="bi bi-stars"></i>
+
+</div>
+
+<h4>AI Powered</h4>
+
+<p>
+
+Get intelligent feedback and recommendations instantly.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="row mt-5">
+
+<div class="col-lg-12">
+
+<div class="upload-card glass">
+
+<div class="row align-items-center">
+
+<div class="col-lg-8">
+
+<h2 class="gradient-text mb-3">
+
+Built for Modern Hiring
+
+</h2>
+
+<p class="mb-4">
+
+Whether you're a student preparing for placements or a recruiter screening hundreds of resumes, this platform helps you analyze resumes, compare skills, rank candidates, and generate AI-powered insights in one place.
+
+</p>
+
+<div class="row g-3">
+
+<div class="col-md-3">
+
+<div class="metric-card">
+
+<h2>ATS</h2>
+
+<h5>Scoring</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="metric-card">
+
+<h2>AI</h2>
+
+<h5>Review</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="metric-card">
+
+<h2>PDF</h2>
+
+<h5>Reports</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="metric-card">
+
+<h2>CSV</h2>
+
+<h5>Export</h5>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4 text-center">
+
+<div class="glass-card p-4 rounded-4 h-100 d-flex flex-column justify-content-center">
+
+<div class="icon-circle mx-auto">
+
+<i class="bi bi-robot"></i>
+
+</div>
+
+<h3 class="mt-3">
+
+AI Powered
+
+</h3>
+
+<p>
+
+Smart Resume Analysis with ATS Scoring, Skill Matching and Recruiter Dashboard.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer class="footer mt-5">
+
+<hr>
+
+<h4 class="gradient-text">
+
+AI Resume Screening Platform
+
+</h4>
+
+<p>
+
+Built using Python, Flask, Bootstrap, OpenRouter AI and ReportLab.
+
+</p>
+
+<div class="mt-4">
+
+<a href="/single" class="btn btn-primary me-2">
+
+🚀 Analyze Resume
+
+</a>
+
+<a href="/recruiter" class="btn btn-success">
+
+👥 Recruiter Dashboard
+
+</a>
+
+</div>
+
+<p class="mt-4 mb-0">
+
+© 2026 AI Resume Screening Platform • Developed by <strong>Devansh Kumar</strong>
+
+</p>
+
+</footer>
+
+</div>
+
+</body>
+
+</html>
