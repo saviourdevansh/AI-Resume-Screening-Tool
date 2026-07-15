@@ -16,6 +16,7 @@ from utils.openrouter import generate_ai_feedback
 from utils.pdf_report import create_pdf
 from markdown import markdown
 from flask import send_from_directory
+from database import create_database
 
 import os
 
@@ -23,6 +24,7 @@ candidate_data = {}
 last_candidate = {}
 
 app = Flask(__name__)
+create_database()
 
 UPLOAD_FOLDER = "uploads"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
@@ -216,6 +218,8 @@ def upload():
 @app.route("/rank", methods=["POST"])
 def rank():
 
+    global candidate_data
+
     job_description = request.form.get("job_description", "")
 
     files = request.files.getlist("resumes")
@@ -223,18 +227,16 @@ def rank():
     if not files:
         return "No Resumes Uploaded"
 
-global candidate_data
+    candidates = rank_candidates(
+        files,
+        app.config["UPLOAD_FOLDER"],
+        job_description
+    )
 
-candidates = rank_candidates(
-    files,
-    app.config["UPLOAD_FOLDER"],
-    job_description
-)
+    candidate_data = {}
 
-candidate_data = {}
-
-for c in candidates:
-    candidate_data[c["resume_file"]] = c
+    for c in candidates:
+        candidate_data[c["resume_file"]] = c
 
     # CSV Save
     csv_file = os.path.join(

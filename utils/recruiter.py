@@ -8,7 +8,7 @@ from utils.education import extract_education
 from utils.projects import extract_projects
 from utils.certifications import extract_certifications
 from utils.ranking import calculate_match
-from utils.ai_feedback import generate_ai_feedback
+from utils.openrouter import generate_ai_feedback
 
 
 def analyze_candidate(filepath, job_description):
@@ -23,7 +23,10 @@ def analyze_candidate(filepath, job_description):
 
     jd_skills = extract_skills(job_description)
 
-    result = calculate_match(resume_skills, jd_skills)
+    result = calculate_match(
+        resume_skills,
+        jd_skills
+    )
 
     experience = extract_experience(
         sections["experience"] if sections["experience"].strip() else resume_text
@@ -41,17 +44,10 @@ def analyze_candidate(filepath, job_description):
         sections["certifications"] if sections["certifications"].strip() else resume_text
     )
 
-# AI Feedback
-try:
+    # AI Feedback
+# AI Feedback Disabled for Fast Ranking
 
-    ai_feedback = generate_ai_feedback(
-        resume_text[:1500],
-        job_description[:700]
-    )
-
-except Exception:
-
-    ai_feedback = "AI Review Not Available"
+    ai_feedback = ""
 
     return {
 
@@ -97,7 +93,10 @@ def rank_candidates(files, upload_folder, job_description):
 
         file.save(filepath)
 
-        candidate = analyze_candidate(filepath, job_description)
+        candidate = analyze_candidate(
+            filepath,
+            job_description
+        )
 
         candidates.append(candidate)
 
