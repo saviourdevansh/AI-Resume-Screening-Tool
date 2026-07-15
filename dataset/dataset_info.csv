@@ -1,0 +1,51 @@
+Resume File,Candidate Name,Role,Education,Experience,Company,Skills,Projects,Certificates
+Resume_001.txt,Yash Sidhu,Java Developer,B.Tech Information Technology,2,Accenture,"REST API, Maven, MySQL, Hibernate, JDBC",4,1
+Resume_002.txt,Harsh Naidu,Frontend Developer,B.Tech Information Technology,0,-,"CSS, HTML, Responsive Design, Bootstrap, Git, React, GitHub, Tailwind CSS",4,3
+Resume_003.txt,Riya Das,Frontend Developer,B.Tech Data Science,4,Capgemini,"Tailwind CSS, Bootstrap, GitHub, JavaScript, Responsive Design, CSS, React, Redux, HTML",3,3
+Resume_004.txt,Priya Tiwari,Frontend Developer,B.Tech Computer Science,3,Cognizant,"HTML, React, Git, GitHub, CSS, Redux",4,3
+Resume_005.txt,Khushi Sandhu,Java Developer,BCA,0,-,"MySQL, Hibernate, REST API, Git, Java, JDBC, Maven, Spring Boot, Docker, JUnit",4,3
+Resume_006.txt,Arjun Gupta,Python Developer,B.Tech Information Technology,0,-,"Pandas, Docker, Django, Python, FastAPI, REST API, GitHub, MySQL, Flask, NumPy, SQL, Linux, Git",2,2
+Resume_007.txt,Harsh Joshi,Data Analyst,BE Software Engineering,4,Cognizant,"Statistics, Pandas, NumPy, Power BI, Excel, Python, SQL",4,1
+Resume_008.txt,Ananya Bansal,Python Developer,MCA,3,Accenture,"Pandas, GitHub, MySQL, Flask, FastAPI, SQL, Python, Docker, Django, Linux",2,2
+Resume_009.txt,Yash Das,Frontend Developer,B.Tech Computer Science,1,HCL,"CSS, Redux, HTML, Tailwind CSS, Responsive Design, Git, JavaScript",3,3
+Resume_010.txt,Shreya Das,Python Developer,B.Sc Computer Science,0,-,"GitHub, REST API, Git, Pandas, Flask, Django, Linux, Python, NumPy, FastAPI, SQL, Docker",4,3
+Resume_011.txt,Aryan Pillai,Frontend Developer,B.Tech Data Science,1,Infosys,"GitHub, Responsive Design, Git, Tailwind CSS, Bootstrap, React, Redux, JavaScript, CSS, HTML",2,2
+Resume_012.txt,Neha Kapoor,Java Developer,B.Tech Computer Science,2,Capgemini,"Hibernate, Git, Spring Boot, Docker, JUnit, REST API, MySQL, Maven, JDBC, Java",2,1
+Resume_013.txt,Komal Gill,Python Developer,B.Tech Computer Science,5,IBM,"Flask, Pandas, Linux, Django, NumPy, Docker, FastAPI, MySQL",4,2
+Resume_014.txt,Khushi Jain,Python Developer,MCA,3,Infosys,"Python, GitHub, FastAPI, Django, Docker, Pandas, REST API",2,3
+Resume_015.txt,Gaurav Verma,Java Developer,B.Tech Artificial Intelligence,4,Accenture,"MySQL, Spring Boot, Maven, JUnit, REST API, Docker, Hibernate, Git",3,3
+Resume_016.txt,Ishita Das,Java Developer,MCA,1,LTIMindtree,"JDBC, Spring Boot, Git, Maven, MySQL, Hibernate, Docker, JUnit",4,1
+Resume_017.txt,Karan Roy,Java Developer,B.Tech Data Science,3,Infosys,"Docker, Spring Boot, REST API, Java, Hibernate, Maven, Git, JUnit, JDBC",4,3
+Resume_018.txt,Tanvi Pillai,Java Developer,BCA,0,-,"MySQL, JUnit, Maven, Git, Hibernate, Java, JDBC, Docker, REST API, Spring Boot",4,2
+Resume_019.txt,Yash Banerjee,Java Developer,B.Tech Data Science,3,LTIMindtree,"Git, JDBC, Java, MySQL, Hibernate, Docker",2,3
+Resume_020.txt,Ritika Pandey,Python Developer,MCA,0,-,"FastAPI, Linux, GitHub, Python, Docker, Git, Pandas, NumPy, Django, Flask, REST API, SQL",4,2
+Resume_021.txt,Deepak Arora,ML Engineer,B.Sc Computer Science,3,Accenture,"Docker, NLP, PyTorch, Machine Learning, Deep Learning, TensorFlow, OpenCV, Scikit-Learn, Python",4,2
+Resume_022.txt,Tanvi Das,Java Developer,B.Tech Computer Science,0,-,"Maven, Docker, Git, REST API, JUnit, JDBC, MySQL, Java, Spring Boot, Hibernate",3,1
+Resume_023.txt,Tanvi Kapoor,Python Developer,B.Tech Artificial Intelligence,3,Accenture,"SQL, Pandas, MySQL, Django, Linux",4,1
+Resume_024.txt,Abhishek Sandhu,Data Analyst,B.Tech Information Technology,2,LTIMindtree,"Data Cleaning, Excel, Pandas, Power BI, Statistics, Tableau, Python",3,2
+Resume_025.txt,Ishita Joshi,Python Developer,B.Tech Artificial Intelligence,0,-,"FastAPI, Python, Django, GitHub, Pandas, Docker, SQL, Flask, NumPy, REST API, Git, Linux",2,2
+Resume_026.txt,Payal Das,ML Engineer,BE Software Engineering,4,Accenture,"Machine Learning, Docker, OpenCV, Python, Scikit-Learn",2,3
+Resume_027.txt,Abhishek Banerjee,Java Developer,B.Tech Information Technology,3,HCL,"JDBC, Spring Boot, Docker, MySQL, Git, Hibernate, REST API, Java, JUnit",3,1
+Resume_028.txt,Sakshi Kapoor,Python Developer,B.Tech Information Technology,2,LTIMindtree,"Django, REST API, Flask, SQL, NumPy, Git, Pandas, GitHub, Docker, MySQL, Python, Linux, FastAPI",2,1
+Resume_029.txt,Yash Sidhu,Data Analyst,BE Software Engineering,1,Tech Mahindra,"Python, Power BI, Tableau, Pandas, Data Cleaning, SQL, NumPy, Excel, Statistics",2,1
+Resume_030.txt,Komal Arora,Python Developer,BE Software Engineering,3,Infosys,"FastAPI, Python, NumPy, Pandas, GitHub, Flask, Linux, REST API, MySQL, Django, Docker, Git, SQL",2,1
+Resume_031.txt,Abhishek Sidhu,Java Developer,BE Software Engineering,4,Capgemini,"JDBC, JUnit, Java, Spring Boot, REST API, Hibernate, Maven, Docker, Git, MySQL",4,2
+Resume_032.txt,Neha Gupta,Frontend Developer,B.Tech Information Technology,5,Capgemini,"React, GitHub, Bootstrap, Tailwind CSS, Git, Responsive Design, JavaScript, Redux",4,2
+Resume_033.txt,Aman Sandhu,ML Engineer,B.Tech Data Science,3,LTIMindtree,"OpenCV, Python, PyTorch, Machine Learning, Docker, TensorFlow, Scikit-Learn, NLP, Deep Learning",3,2
+Resume_034.txt,Ishita Roy,Frontend Developer,B.Tech Computer Science,5,Tech Mahindra,"React, CSS, Git, GitHub, Redux, HTML, Bootstrap, JavaScript, Tailwind CSS, Responsive Design",3,1
+Resume_035.txt,Khushi Gill,Python Developer,B.Tech Computer Science,0,-,"Flask, Git, REST API, Python, Docker, FastAPI, Django, Linux, SQL, GitHub, NumPy, Pandas",3,3
+Resume_036.txt,Devansh Kumar,Frontend Developer,B.Tech Artificial Intelligence,1,Wipro,"React, JavaScript, Tailwind CSS, Redux, GitHub, HTML, Responsive Design, Bootstrap",4,1
+Resume_037.txt,Arjun Mishra,Frontend Developer,B.Tech Information Technology,1,Cognizant,"Responsive Design, Bootstrap, JavaScript, CSS, React, GitHub",4,1
+Resume_038.txt,Muskan Rathore,Java Developer,BCA,4,IBM,"Hibernate, Docker, Spring Boot, Java, JDBC, Git, MySQL, JUnit, Maven, REST API",4,3
+Resume_039.txt,Karan Sidhu,Python Developer,B.Sc Computer Science,5,Tech Mahindra,"REST API, Pandas, GitHub, Python, Docker, MySQL, Linux",4,1
+Resume_040.txt,Aditya Malhotra,Data Analyst,BE Software Engineering,5,Cognizant,"Tableau, NumPy, Data Cleaning, Excel, Pandas, Statistics, Python",4,1
+Resume_041.txt,Shreya Kapoor,ML Engineer,MCA,4,TCS,"TensorFlow, NLP, Scikit-Learn, Deep Learning, Machine Learning",2,1
+Resume_042.txt,Ananya Gupta,Python Developer,B.Tech Artificial Intelligence,0,-,"Docker, NumPy, Flask, Pandas, GitHub",2,2
+Resume_043.txt,Rohan Kapoor,Java Developer,B.Tech Data Science,2,Infosys,"MySQL, Docker, Spring Boot, JUnit, JDBC, Hibernate",4,1
+Resume_044.txt,Sakshi Tiwari,ML Engineer,B.Tech Information Technology,3,Accenture,"NLP, Machine Learning, Python, OpenCV, Deep Learning, Scikit-Learn, PyTorch",3,2
+Resume_045.txt,Nikhil Rathore,Java Developer,B.Tech Data Science,5,IBM,"Spring Boot, Hibernate, REST API, Docker, Maven, Git, Java, JUnit",4,2
+Resume_046.txt,Aryan Gill,Data Analyst,B.Sc Computer Science,4,Cognizant,"Statistics, Pandas, Excel, SQL, Data Cleaning, NumPy",4,1
+Resume_047.txt,Yash Reddy,Java Developer,B.Tech Information Technology,0,-,"MySQL, REST API, Java, Spring Boot, Hibernate, Git, JUnit, Docker",4,2
+Resume_048.txt,Saurabh Mishra,Frontend Developer,B.Tech Data Science,2,Capgemini,"React, Tailwind CSS, JavaScript, Git, HTML, GitHub, Responsive Design, Bootstrap, CSS, Redux",4,3
+Resume_049.txt,Rohan Gill,ML Engineer,BE Software Engineering,5,Wipro,"NLP, Python, Docker, OpenCV, TensorFlow",4,1
+Resume_050.txt,Simran Rathore,Data Analyst,BE Software Engineering,5,HCL,"Excel, NumPy, Data Cleaning, Pandas, Tableau, Power BI",3,2

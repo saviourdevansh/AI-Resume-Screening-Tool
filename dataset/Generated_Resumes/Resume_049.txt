@@ -1,0 +1,41 @@
+
+==================================================
+Rohan Gill
+==================================================
+
+Role
+----
+ML Engineer
+
+Contact
+-------
+Email : rohan.gill871@gmail.com
+
+Phone : 9784408111
+
+Education
+---------
+BE Software Engineering
+
+Experience
+----------
+5 Years
+
+Company
+-------
+Wipro
+
+Skills
+------
+NLP, Python, Docker, OpenCV, TensorFlow
+
+Projects
+--------
+- Object Detection
+- Sentiment Analysis
+- Face Mask Detection
+- Spam Email Classifier
+
+Certificates
+------------
+- AWS Cloud Practitioner

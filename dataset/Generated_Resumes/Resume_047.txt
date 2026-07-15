@@ -1,0 +1,42 @@
+
+==================================================
+Yash Reddy
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : yash.reddy490@gmail.com
+
+Phone : 9410987559
+
+Education
+---------
+B.Tech Information Technology
+
+Experience
+----------
+0 Years
+
+Company
+-------
+-
+
+Skills
+------
+MySQL, REST API, Java, Spring Boot, Hibernate, Git, JUnit, Docker
+
+Projects
+--------
+- Online Examination System
+- College ERP
+- Bank Management System
+- Hotel Management System
+
+Certificates
+------------
+- Google Data Analytics
+- Microsoft Azure Fundamentals

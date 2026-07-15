@@ -1,0 +1,26 @@
+Data Analyst
+
+Required Skills
+---------------
+Excel
+SQL
+Power BI
+Python
+Statistics
+Pandas
+NumPy
+
+Experience
+----------
+0-2 Years
+
+Education
+---------
+B.Tech / B.Sc / MCA
+
+Responsibilities
+----------------
+Analyze datasets
+Create dashboards
+Generate reports
+Perform data cleaning

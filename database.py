@@ -186,3 +186,35 @@ def clear_candidates():
     conn.commit()
 
     conn.close()
+
+def delete_candidate(candidate_id):
+
+    conn = get_connection()
+
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "DELETE FROM candidates WHERE id=?",
+        (candidate_id,)
+    )
+
+    conn.commit()
+
+    conn.close()
+
+def get_candidate_by_id(candidate_id):
+
+    conn = get_connection()
+
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "SELECT * FROM candidates WHERE id=?",
+        (candidate_id,)
+    )
+
+    row = cursor.fetchone()
+
+    conn.close()
+
+    return row    

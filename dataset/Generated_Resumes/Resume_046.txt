@@ -1,0 +1,41 @@
+
+==================================================
+Aryan Gill
+==================================================
+
+Role
+----
+Data Analyst
+
+Contact
+-------
+Email : aryan.gill724@gmail.com
+
+Phone : 9221716990
+
+Education
+---------
+B.Sc Computer Science
+
+Experience
+----------
+4 Years
+
+Company
+-------
+Cognizant
+
+Skills
+------
+Statistics, Pandas, Excel, SQL, Data Cleaning, NumPy
+
+Projects
+--------
+- IPL Data Analysis
+- Stock Market Analysis
+- Netflix Data Analysis
+- Sales Dashboard
+
+Certificates
+------------
+- NPTEL Python

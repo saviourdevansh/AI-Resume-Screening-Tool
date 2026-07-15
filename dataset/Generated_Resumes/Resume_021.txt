@@ -1,0 +1,42 @@
+
+==================================================
+Deepak Arora
+==================================================
+
+Role
+----
+ML Engineer
+
+Contact
+-------
+Email : deepak.arora40@gmail.com
+
+Phone : 9500052580
+
+Education
+---------
+B.Sc Computer Science
+
+Experience
+----------
+3 Years
+
+Company
+-------
+Accenture
+
+Skills
+------
+Docker, NLP, PyTorch, Machine Learning, Deep Learning, TensorFlow, OpenCV, Scikit-Learn, Python
+
+Projects
+--------
+- Fake News Detection
+- Movie Recommendation System
+- Face Mask Detection
+- Spam Email Classifier
+
+Certificates
+------------
+- Microsoft Azure Fundamentals
+- Coursera Machine Learning

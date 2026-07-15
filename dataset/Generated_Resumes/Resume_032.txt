@@ -1,0 +1,42 @@
+
+==================================================
+Neha Gupta
+==================================================
+
+Role
+----
+Frontend Developer
+
+Contact
+-------
+Email : neha.gupta457@gmail.com
+
+Phone : 9771853826
+
+Education
+---------
+B.Tech Information Technology
+
+Experience
+----------
+5 Years
+
+Company
+-------
+Capgemini
+
+Skills
+------
+React, GitHub, Bootstrap, Tailwind CSS, Git, Responsive Design, JavaScript, Redux
+
+Projects
+--------
+- News Portal
+- Portfolio Website
+- Netflix Clone
+- Amazon Clone
+
+Certificates
+------------
+- HackerRank SQL
+- NPTEL Python

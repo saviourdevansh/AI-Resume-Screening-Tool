@@ -1,0 +1,41 @@
+
+==================================================
+Yash Banerjee
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : yash.banerjee266@gmail.com
+
+Phone : 9998274906
+
+Education
+---------
+B.Tech Data Science
+
+Experience
+----------
+3 Years
+
+Company
+-------
+LTIMindtree
+
+Skills
+------
+Git, JDBC, Java, MySQL, Hibernate, Docker
+
+Projects
+--------
+- Vehicle Rental System
+- Hotel Management System
+
+Certificates
+------------
+- TensorFlow Developer
+- Google Data Analytics
+- IBM Python for Data Science

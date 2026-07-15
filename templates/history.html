@@ -77,6 +77,7 @@ onkeyup="searchCandidate()">
 <th>Education</th>
 
 <th>Date</th>
+<th>Action</th>
 
 </tr>
 
@@ -137,6 +138,27 @@ Years
 <td>
 
 {{ candidate.created_at }}
+
+</td>
+
+<td>
+
+<a
+href="/candidate/{{ candidate.id }}"
+class="btn btn-primary btn-sm">
+
+👁 View
+
+</a>
+
+<a
+href="/delete_candidate/{{ candidate.id }}"
+class="btn btn-danger btn-sm"
+onclick="return confirm('Delete this candidate?')">
+
+🗑 Delete
+
+</a>
 
 </td>
 

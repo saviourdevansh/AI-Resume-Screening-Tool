@@ -1,0 +1,41 @@
+
+==================================================
+Yash Sidhu
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : yash.sidhu961@gmail.com
+
+Phone : 9457983481
+
+Education
+---------
+B.Tech Information Technology
+
+Experience
+----------
+2 Years
+
+Company
+-------
+Accenture
+
+Skills
+------
+REST API, Maven, MySQL, Hibernate, JDBC
+
+Projects
+--------
+- Ticket Booking System
+- Vehicle Rental System
+- Online Examination System
+- Hotel Management System
+
+Certificates
+------------
+- Google Data Analytics

@@ -1,0 +1,41 @@
+
+==================================================
+Tanvi Kapoor
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : tanvi.kapoor288@gmail.com
+
+Phone : 9357304566
+
+Education
+---------
+B.Tech Artificial Intelligence
+
+Experience
+----------
+3 Years
+
+Company
+-------
+Accenture
+
+Skills
+------
+SQL, Pandas, MySQL, Django, Linux
+
+Projects
+--------
+- Library Management System
+- Employee Management System
+- Expense Tracker
+- Hospital Management System
+
+Certificates
+------------
+- HackerRank SQL

@@ -1,0 +1,39 @@
+
+==================================================
+Komal Arora
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : komal.arora883@gmail.com
+
+Phone : 9722946610
+
+Education
+---------
+BE Software Engineering
+
+Experience
+----------
+3 Years
+
+Company
+-------
+Infosys
+
+Skills
+------
+FastAPI, Python, NumPy, Pandas, GitHub, Flask, Linux, REST API, MySQL, Django, Docker, Git, SQL
+
+Projects
+--------
+- Chat Application
+- Inventory Management System
+
+Certificates
+------------
+- HackerRank SQL

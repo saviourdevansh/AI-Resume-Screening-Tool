@@ -1,0 +1,43 @@
+
+==================================================
+Priya Tiwari
+==================================================
+
+Role
+----
+Frontend Developer
+
+Contact
+-------
+Email : priya.tiwari457@gmail.com
+
+Phone : 9331541479
+
+Education
+---------
+B.Tech Computer Science
+
+Experience
+----------
+3 Years
+
+Company
+-------
+Cognizant
+
+Skills
+------
+HTML, React, Git, GitHub, CSS, Redux
+
+Projects
+--------
+- E-Commerce Frontend
+- Portfolio Website
+- Task Management App
+- Netflix Clone
+
+Certificates
+------------
+- Cisco Networking Essentials
+- IBM Python for Data Science
+- AWS Cloud Practitioner

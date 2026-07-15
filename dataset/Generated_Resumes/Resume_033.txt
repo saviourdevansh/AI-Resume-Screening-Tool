@@ -1,0 +1,41 @@
+
+==================================================
+Aman Sandhu
+==================================================
+
+Role
+----
+ML Engineer
+
+Contact
+-------
+Email : aman.sandhu625@gmail.com
+
+Phone : 9744338885
+
+Education
+---------
+B.Tech Data Science
+
+Experience
+----------
+3 Years
+
+Company
+-------
+LTIMindtree
+
+Skills
+------
+OpenCV, Python, PyTorch, Machine Learning, Docker, TensorFlow, Scikit-Learn, NLP, Deep Learning
+
+Projects
+--------
+- Object Detection
+- Movie Recommendation System
+- Fake News Detection
+
+Certificates
+------------
+- HackerRank SQL
+- TensorFlow Developer

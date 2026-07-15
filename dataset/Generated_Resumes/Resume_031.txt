@@ -1,0 +1,42 @@
+
+==================================================
+Abhishek Sidhu
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : abhishek.sidhu830@gmail.com
+
+Phone : 9804514352
+
+Education
+---------
+BE Software Engineering
+
+Experience
+----------
+4 Years
+
+Company
+-------
+Capgemini
+
+Skills
+------
+JDBC, JUnit, Java, Spring Boot, REST API, Hibernate, Maven, Docker, Git, MySQL
+
+Projects
+--------
+- Payroll Management System
+- Bank Management System
+- College ERP
+- Library Automation
+
+Certificates
+------------
+- NPTEL Python
+- Google Data Analytics

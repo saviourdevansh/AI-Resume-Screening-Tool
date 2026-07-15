@@ -1,0 +1,43 @@
+
+==================================================
+Karan Roy
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : karan.roy863@gmail.com
+
+Phone : 9360376449
+
+Education
+---------
+B.Tech Data Science
+
+Experience
+----------
+3 Years
+
+Company
+-------
+Infosys
+
+Skills
+------
+Docker, Spring Boot, REST API, Java, Hibernate, Maven, Git, JUnit, JDBC
+
+Projects
+--------
+- Ticket Booking System
+- College ERP
+- Payroll Management System
+- Hotel Management System
+
+Certificates
+------------
+- NPTEL Python
+- TensorFlow Developer
+- AWS Cloud Practitioner

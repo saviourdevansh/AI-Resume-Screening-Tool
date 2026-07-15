@@ -1,0 +1,41 @@
+
+==================================================
+Abhishek Sandhu
+==================================================
+
+Role
+----
+Data Analyst
+
+Contact
+-------
+Email : abhishek.sandhu22@gmail.com
+
+Phone : 9084353653
+
+Education
+---------
+B.Tech Information Technology
+
+Experience
+----------
+2 Years
+
+Company
+-------
+LTIMindtree
+
+Skills
+------
+Data Cleaning, Excel, Pandas, Power BI, Statistics, Tableau, Python
+
+Projects
+--------
+- HR Analytics Dashboard
+- IPL Data Analysis
+- Sales Dashboard
+
+Certificates
+------------
+- AWS Cloud Practitioner
+- Microsoft Azure Fundamentals

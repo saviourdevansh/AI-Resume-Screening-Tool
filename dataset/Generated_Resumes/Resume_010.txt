@@ -1,0 +1,43 @@
+
+==================================================
+Shreya Das
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : shreya.das850@gmail.com
+
+Phone : 9534248438
+
+Education
+---------
+B.Sc Computer Science
+
+Experience
+----------
+0 Years
+
+Company
+-------
+-
+
+Skills
+------
+GitHub, REST API, Git, Pandas, Flask, Django, Linux, Python, NumPy, FastAPI, SQL, Docker
+
+Projects
+--------
+- AI Resume Screening Tool
+- Chat Application
+- Employee Management System
+- Inventory Management System
+
+Certificates
+------------
+- Cisco Networking Essentials
+- AWS Cloud Practitioner
+- TensorFlow Developer

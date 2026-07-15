@@ -1,0 +1,41 @@
+
+==================================================
+Arjun Mishra
+==================================================
+
+Role
+----
+Frontend Developer
+
+Contact
+-------
+Email : arjun.mishra277@gmail.com
+
+Phone : 9550363023
+
+Education
+---------
+B.Tech Information Technology
+
+Experience
+----------
+1 Years
+
+Company
+-------
+Cognizant
+
+Skills
+------
+Responsive Design, Bootstrap, JavaScript, CSS, React, GitHub
+
+Projects
+--------
+- E-Commerce Frontend
+- Amazon Clone
+- Task Management App
+- Portfolio Website
+
+Certificates
+------------
+- IBM Python for Data Science

@@ -1,0 +1,43 @@
+
+==================================================
+Muskan Rathore
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : muskan.rathore609@gmail.com
+
+Phone : 9382346988
+
+Education
+---------
+BCA
+
+Experience
+----------
+4 Years
+
+Company
+-------
+IBM
+
+Skills
+------
+Hibernate, Docker, Spring Boot, Java, JDBC, Git, MySQL, JUnit, Maven, REST API
+
+Projects
+--------
+- Ticket Booking System
+- Payroll Management System
+- Vehicle Rental System
+- Library Automation
+
+Certificates
+------------
+- Oracle Java Foundations
+- NPTEL Python
+- HackerRank SQL

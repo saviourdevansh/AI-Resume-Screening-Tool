@@ -1,0 +1,41 @@
+
+==================================================
+Ishita Das
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : ishita.das182@gmail.com
+
+Phone : 9080627278
+
+Education
+---------
+MCA
+
+Experience
+----------
+1 Years
+
+Company
+-------
+LTIMindtree
+
+Skills
+------
+JDBC, Spring Boot, Git, Maven, MySQL, Hibernate, Docker, JUnit
+
+Projects
+--------
+- Payroll Management System
+- College ERP
+- Ticket Booking System
+- Vehicle Rental System
+
+Certificates
+------------
+- IBM Python for Data Science

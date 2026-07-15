@@ -1,0 +1,42 @@
+
+==================================================
+Gaurav Verma
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : gaurav.verma344@gmail.com
+
+Phone : 9366093017
+
+Education
+---------
+B.Tech Artificial Intelligence
+
+Experience
+----------
+4 Years
+
+Company
+-------
+Accenture
+
+Skills
+------
+MySQL, Spring Boot, Maven, JUnit, REST API, Docker, Hibernate, Git
+
+Projects
+--------
+- Vehicle Rental System
+- Payroll Management System
+- Bank Management System
+
+Certificates
+------------
+- HackerRank SQL
+- Cisco Networking Essentials
+- AWS Cloud Practitioner

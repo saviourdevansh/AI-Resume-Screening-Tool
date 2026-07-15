@@ -1,0 +1,39 @@
+
+==================================================
+Neha Kapoor
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : neha.kapoor590@gmail.com
+
+Phone : 9922750529
+
+Education
+---------
+B.Tech Computer Science
+
+Experience
+----------
+2 Years
+
+Company
+-------
+Capgemini
+
+Skills
+------
+Hibernate, Git, Spring Boot, Docker, JUnit, REST API, MySQL, Maven, JDBC, Java
+
+Projects
+--------
+- Bank Management System
+- Vehicle Rental System
+
+Certificates
+------------
+- IBM Python for Data Science

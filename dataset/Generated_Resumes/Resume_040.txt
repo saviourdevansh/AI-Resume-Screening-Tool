@@ -1,0 +1,41 @@
+
+==================================================
+Aditya Malhotra
+==================================================
+
+Role
+----
+Data Analyst
+
+Contact
+-------
+Email : aditya.malhotra353@gmail.com
+
+Phone : 9769228135
+
+Education
+---------
+BE Software Engineering
+
+Experience
+----------
+5 Years
+
+Company
+-------
+Cognizant
+
+Skills
+------
+Tableau, NumPy, Data Cleaning, Excel, Pandas, Statistics, Python
+
+Projects
+--------
+- Sales Dashboard
+- COVID-19 Dashboard
+- Netflix Data Analysis
+- HR Analytics Dashboard
+
+Certificates
+------------
+- HackerRank SQL

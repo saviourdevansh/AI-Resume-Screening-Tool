@@ -1,0 +1,43 @@
+
+==================================================
+Harsh Naidu
+==================================================
+
+Role
+----
+Frontend Developer
+
+Contact
+-------
+Email : harsh.naidu807@gmail.com
+
+Phone : 9643299261
+
+Education
+---------
+B.Tech Information Technology
+
+Experience
+----------
+0 Years
+
+Company
+-------
+-
+
+Skills
+------
+CSS, HTML, Responsive Design, Bootstrap, Git, React, GitHub, Tailwind CSS
+
+Projects
+--------
+- Portfolio Website
+- Netflix Clone
+- Restaurant Website
+- News Portal
+
+Certificates
+------------
+- NPTEL Python
+- HackerRank SQL
+- TensorFlow Developer

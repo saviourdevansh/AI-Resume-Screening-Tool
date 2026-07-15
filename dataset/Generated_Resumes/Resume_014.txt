@@ -1,0 +1,41 @@
+
+==================================================
+Khushi Jain
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : khushi.jain520@gmail.com
+
+Phone : 9269737019
+
+Education
+---------
+MCA
+
+Experience
+----------
+3 Years
+
+Company
+-------
+Infosys
+
+Skills
+------
+Python, GitHub, FastAPI, Django, Docker, Pandas, REST API
+
+Projects
+--------
+- Hospital Management System
+- Inventory Management System
+
+Certificates
+------------
+- Google Data Analytics
+- TensorFlow Developer
+- HackerRank SQL

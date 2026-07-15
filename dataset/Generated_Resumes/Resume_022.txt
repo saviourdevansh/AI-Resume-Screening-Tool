@@ -1,0 +1,40 @@
+
+==================================================
+Tanvi Das
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : tanvi.das988@gmail.com
+
+Phone : 9790644913
+
+Education
+---------
+B.Tech Computer Science
+
+Experience
+----------
+0 Years
+
+Company
+-------
+-
+
+Skills
+------
+Maven, Docker, Git, REST API, JUnit, JDBC, MySQL, Java, Spring Boot, Hibernate
+
+Projects
+--------
+- Ticket Booking System
+- Bank Management System
+- Hotel Management System
+
+Certificates
+------------
+- Microsoft Azure Fundamentals

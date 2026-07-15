@@ -20,8 +20,11 @@ from database import (
     create_database,
     insert_candidate,
     get_candidates,
-    clear_candidates
+    get_candidate_by_id,
+    clear_candidates,
+    delete_candidate
 )
+from flask import redirect
 
 import os
 
@@ -412,6 +415,27 @@ def history():
         "history.html",
         candidates=candidates
     )
+
+@app.route("/candidate/<int:id>")
+def candidate_details(id):
+
+    candidate = get_candidate_by_id(id)
+
+    if candidate is None:
+        return "Candidate Not Found"
+
+    return render_template(
+        "candidate.html",
+        candidate=candidate
+    )    
+
+@app.route("/delete_candidate/<int:id>")
+def remove_candidate(id):
+
+    delete_candidate(id)
+
+    return redirect("/history")
+
 
 # ---------------------------------------
 # Run App

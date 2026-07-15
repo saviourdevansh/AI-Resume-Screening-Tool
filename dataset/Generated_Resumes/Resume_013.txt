@@ -1,0 +1,42 @@
+
+==================================================
+Komal Gill
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : komal.gill788@gmail.com
+
+Phone : 9948905340
+
+Education
+---------
+B.Tech Computer Science
+
+Experience
+----------
+5 Years
+
+Company
+-------
+IBM
+
+Skills
+------
+Flask, Pandas, Linux, Django, NumPy, Docker, FastAPI, MySQL
+
+Projects
+--------
+- Employee Management System
+- Expense Tracker
+- Chat Application
+- Weather Forecast App
+
+Certificates
+------------
+- Oracle Java Foundations
+- HackerRank SQL

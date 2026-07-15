@@ -1,0 +1,40 @@
+
+==================================================
+Ananya Gupta
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : ananya.gupta797@gmail.com
+
+Phone : 9080820676
+
+Education
+---------
+B.Tech Artificial Intelligence
+
+Experience
+----------
+0 Years
+
+Company
+-------
+-
+
+Skills
+------
+Docker, NumPy, Flask, Pandas, GitHub
+
+Projects
+--------
+- AI Resume Screening Tool
+- Weather Forecast App
+
+Certificates
+------------
+- Coursera Machine Learning
+- Google Data Analytics

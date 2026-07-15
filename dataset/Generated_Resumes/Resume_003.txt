@@ -1,0 +1,42 @@
+
+==================================================
+Riya Das
+==================================================
+
+Role
+----
+Frontend Developer
+
+Contact
+-------
+Email : riya.das91@gmail.com
+
+Phone : 9112209276
+
+Education
+---------
+B.Tech Data Science
+
+Experience
+----------
+4 Years
+
+Company
+-------
+Capgemini
+
+Skills
+------
+Tailwind CSS, Bootstrap, GitHub, JavaScript, Responsive Design, CSS, React, Redux, HTML
+
+Projects
+--------
+- Travel Booking Website
+- Portfolio Website
+- Netflix Clone
+
+Certificates
+------------
+- TensorFlow Developer
+- Oracle Java Foundations
+- HackerRank SQL

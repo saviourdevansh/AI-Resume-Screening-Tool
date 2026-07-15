@@ -1,0 +1,42 @@
+
+==================================================
+Nikhil Rathore
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : nikhil.rathore703@gmail.com
+
+Phone : 9446686655
+
+Education
+---------
+B.Tech Data Science
+
+Experience
+----------
+5 Years
+
+Company
+-------
+IBM
+
+Skills
+------
+Spring Boot, Hibernate, REST API, Docker, Maven, Git, Java, JUnit
+
+Projects
+--------
+- Bank Management System
+- College ERP
+- Vehicle Rental System
+- Payroll Management System
+
+Certificates
+------------
+- TensorFlow Developer
+- NPTEL Python

@@ -1,0 +1,41 @@
+
+==================================================
+Karan Sidhu
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : karan.sidhu111@gmail.com
+
+Phone : 9749972220
+
+Education
+---------
+B.Sc Computer Science
+
+Experience
+----------
+5 Years
+
+Company
+-------
+Tech Mahindra
+
+Skills
+------
+REST API, Pandas, GitHub, Python, Docker, MySQL, Linux
+
+Projects
+--------
+- Hospital Management System
+- Chat Application
+- Library Management System
+- Weather Forecast App
+
+Certificates
+------------
+- HackerRank SQL

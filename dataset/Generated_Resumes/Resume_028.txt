@@ -1,0 +1,39 @@
+
+==================================================
+Sakshi Kapoor
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : sakshi.kapoor628@gmail.com
+
+Phone : 9293835043
+
+Education
+---------
+B.Tech Information Technology
+
+Experience
+----------
+2 Years
+
+Company
+-------
+LTIMindtree
+
+Skills
+------
+Django, REST API, Flask, SQL, NumPy, Git, Pandas, GitHub, Docker, MySQL, Python, Linux, FastAPI
+
+Projects
+--------
+- Expense Tracker
+- Employee Management System
+
+Certificates
+------------
+- Cisco Networking Essentials

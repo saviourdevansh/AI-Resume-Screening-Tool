@@ -1,0 +1,40 @@
+
+==================================================
+Ishita Joshi
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : ishita.joshi332@gmail.com
+
+Phone : 9137201214
+
+Education
+---------
+B.Tech Artificial Intelligence
+
+Experience
+----------
+0 Years
+
+Company
+-------
+-
+
+Skills
+------
+FastAPI, Python, Django, GitHub, Pandas, Docker, SQL, Flask, NumPy, REST API, Git, Linux
+
+Projects
+--------
+- Weather Forecast App
+- Expense Tracker
+
+Certificates
+------------
+- Coursera Machine Learning
+- HackerRank SQL

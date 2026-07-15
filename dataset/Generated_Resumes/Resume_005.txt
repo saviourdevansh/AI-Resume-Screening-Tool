@@ -1,0 +1,43 @@
+
+==================================================
+Khushi Sandhu
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : khushi.sandhu907@gmail.com
+
+Phone : 9345064159
+
+Education
+---------
+BCA
+
+Experience
+----------
+0 Years
+
+Company
+-------
+-
+
+Skills
+------
+MySQL, Hibernate, REST API, Git, Java, JDBC, Maven, Spring Boot, Docker, JUnit
+
+Projects
+--------
+- Ticket Booking System
+- Vehicle Rental System
+- Hotel Management System
+- Bank Management System
+
+Certificates
+------------
+- Cisco Networking Essentials
+- AWS Cloud Practitioner
+- Microsoft Azure Fundamentals

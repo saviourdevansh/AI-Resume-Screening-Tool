@@ -1,0 +1,42 @@
+
+==================================================
+Khushi Gill
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : khushi.gill564@gmail.com
+
+Phone : 9478090376
+
+Education
+---------
+B.Tech Computer Science
+
+Experience
+----------
+0 Years
+
+Company
+-------
+-
+
+Skills
+------
+Flask, Git, REST API, Python, Docker, FastAPI, Django, Linux, SQL, GitHub, NumPy, Pandas
+
+Projects
+--------
+- Inventory Management System
+- Employee Management System
+- Chat Application
+
+Certificates
+------------
+- IBM Python for Data Science
+- HackerRank SQL
+- TensorFlow Developer

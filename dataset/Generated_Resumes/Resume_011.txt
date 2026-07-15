@@ -1,0 +1,40 @@
+
+==================================================
+Aryan Pillai
+==================================================
+
+Role
+----
+Frontend Developer
+
+Contact
+-------
+Email : aryan.pillai181@gmail.com
+
+Phone : 9446770504
+
+Education
+---------
+B.Tech Data Science
+
+Experience
+----------
+1 Years
+
+Company
+-------
+Infosys
+
+Skills
+------
+GitHub, Responsive Design, Git, Tailwind CSS, Bootstrap, React, Redux, JavaScript, CSS, HTML
+
+Projects
+--------
+- Travel Booking Website
+- Amazon Clone
+
+Certificates
+------------
+- HackerRank SQL
+- Cisco Networking Essentials

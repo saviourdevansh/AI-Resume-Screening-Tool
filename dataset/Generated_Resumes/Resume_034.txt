@@ -1,0 +1,40 @@
+
+==================================================
+Ishita Roy
+==================================================
+
+Role
+----
+Frontend Developer
+
+Contact
+-------
+Email : ishita.roy701@gmail.com
+
+Phone : 9677505901
+
+Education
+---------
+B.Tech Computer Science
+
+Experience
+----------
+5 Years
+
+Company
+-------
+Tech Mahindra
+
+Skills
+------
+React, CSS, Git, GitHub, Redux, HTML, Bootstrap, JavaScript, Tailwind CSS, Responsive Design
+
+Projects
+--------
+- News Portal
+- Restaurant Website
+- Portfolio Website
+
+Certificates
+------------
+- Cisco Networking Essentials

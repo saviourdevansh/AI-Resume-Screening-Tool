@@ -1,0 +1,42 @@
+
+==================================================
+Yash Das
+==================================================
+
+Role
+----
+Frontend Developer
+
+Contact
+-------
+Email : yash.das904@gmail.com
+
+Phone : 9040229005
+
+Education
+---------
+B.Tech Computer Science
+
+Experience
+----------
+1 Years
+
+Company
+-------
+HCL
+
+Skills
+------
+CSS, Redux, HTML, Tailwind CSS, Responsive Design, Git, JavaScript
+
+Projects
+--------
+- Portfolio Website
+- Travel Booking Website
+- Task Management App
+
+Certificates
+------------
+- Google Data Analytics
+- HackerRank SQL
+- AWS Cloud Practitioner

@@ -1,0 +1,39 @@
+
+==================================================
+Shreya Kapoor
+==================================================
+
+Role
+----
+ML Engineer
+
+Contact
+-------
+Email : shreya.kapoor473@gmail.com
+
+Phone : 9828005487
+
+Education
+---------
+MCA
+
+Experience
+----------
+4 Years
+
+Company
+-------
+TCS
+
+Skills
+------
+TensorFlow, NLP, Scikit-Learn, Deep Learning, Machine Learning
+
+Projects
+--------
+- Movie Recommendation System
+- Spam Email Classifier
+
+Certificates
+------------
+- Microsoft Azure Fundamentals

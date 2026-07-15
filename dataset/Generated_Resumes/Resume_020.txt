@@ -1,0 +1,42 @@
+
+==================================================
+Ritika Pandey
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : ritika.pandey683@gmail.com
+
+Phone : 9102515674
+
+Education
+---------
+MCA
+
+Experience
+----------
+0 Years
+
+Company
+-------
+-
+
+Skills
+------
+FastAPI, Linux, GitHub, Python, Docker, Git, Pandas, NumPy, Django, Flask, REST API, SQL
+
+Projects
+--------
+- Chat Application
+- Weather Forecast App
+- Hospital Management System
+- Expense Tracker
+
+Certificates
+------------
+- IBM Python for Data Science
+- HackerRank SQL

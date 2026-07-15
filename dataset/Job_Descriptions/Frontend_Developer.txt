@@ -1,0 +1,27 @@
+Frontend Developer
+
+Required Skills
+---------------
+HTML
+CSS
+JavaScript
+Bootstrap
+React
+Redux
+Git
+Responsive Design
+
+Experience
+----------
+0-2 Years
+
+Education
+---------
+B.Tech / BCA / MCA
+
+Responsibilities
+----------------
+Build responsive websites
+Create UI components
+Connect APIs
+Improve user experience

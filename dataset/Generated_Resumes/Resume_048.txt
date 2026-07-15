@@ -1,0 +1,43 @@
+
+==================================================
+Saurabh Mishra
+==================================================
+
+Role
+----
+Frontend Developer
+
+Contact
+-------
+Email : saurabh.mishra191@gmail.com
+
+Phone : 9175690372
+
+Education
+---------
+B.Tech Data Science
+
+Experience
+----------
+2 Years
+
+Company
+-------
+Capgemini
+
+Skills
+------
+React, Tailwind CSS, JavaScript, Git, HTML, GitHub, Responsive Design, Bootstrap, CSS, Redux
+
+Projects
+--------
+- E-Commerce Frontend
+- Portfolio Website
+- Travel Booking Website
+- Amazon Clone
+
+Certificates
+------------
+- Cisco Networking Essentials
+- AWS Cloud Practitioner
+- HackerRank SQL

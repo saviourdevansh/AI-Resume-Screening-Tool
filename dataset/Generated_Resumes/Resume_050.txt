@@ -1,0 +1,41 @@
+
+==================================================
+Simran Rathore
+==================================================
+
+Role
+----
+Data Analyst
+
+Contact
+-------
+Email : simran.rathore620@gmail.com
+
+Phone : 9894014114
+
+Education
+---------
+BE Software Engineering
+
+Experience
+----------
+5 Years
+
+Company
+-------
+HCL
+
+Skills
+------
+Excel, NumPy, Data Cleaning, Pandas, Tableau, Power BI
+
+Projects
+--------
+- Retail Sales Analysis
+- IPL Data Analysis
+- COVID-19 Dashboard
+
+Certificates
+------------
+- Google Data Analytics
+- Coursera Machine Learning

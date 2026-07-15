@@ -1,0 +1,42 @@
+
+==================================================
+Tanvi Pillai
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : tanvi.pillai325@gmail.com
+
+Phone : 9807174368
+
+Education
+---------
+BCA
+
+Experience
+----------
+0 Years
+
+Company
+-------
+-
+
+Skills
+------
+MySQL, JUnit, Maven, Git, Hibernate, Java, JDBC, Docker, REST API, Spring Boot
+
+Projects
+--------
+- Bank Management System
+- Library Automation
+- College ERP
+- Online Examination System
+
+Certificates
+------------
+- Oracle Java Foundations
+- HackerRank SQL

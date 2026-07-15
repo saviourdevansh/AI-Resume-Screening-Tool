@@ -1,0 +1,41 @@
+
+==================================================
+Rohan Kapoor
+==================================================
+
+Role
+----
+Java Developer
+
+Contact
+-------
+Email : rohan.kapoor855@gmail.com
+
+Phone : 9197960300
+
+Education
+---------
+B.Tech Data Science
+
+Experience
+----------
+2 Years
+
+Company
+-------
+Infosys
+
+Skills
+------
+MySQL, Docker, Spring Boot, JUnit, JDBC, Hibernate
+
+Projects
+--------
+- Bank Management System
+- Online Examination System
+- Library Automation
+- College ERP
+
+Certificates
+------------
+- HackerRank SQL

@@ -1,0 +1,41 @@
+
+==================================================
+Payal Das
+==================================================
+
+Role
+----
+ML Engineer
+
+Contact
+-------
+Email : payal.das748@gmail.com
+
+Phone : 9101560922
+
+Education
+---------
+BE Software Engineering
+
+Experience
+----------
+4 Years
+
+Company
+-------
+Accenture
+
+Skills
+------
+Machine Learning, Docker, OpenCV, Python, Scikit-Learn
+
+Projects
+--------
+- Plant Disease Detection
+- Object Detection
+
+Certificates
+------------
+- AWS Cloud Practitioner
+- IBM Python for Data Science
+- Cisco Networking Essentials

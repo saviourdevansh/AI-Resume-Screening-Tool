@@ -1,0 +1,40 @@
+
+==================================================
+Ananya Bansal
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : ananya.bansal468@gmail.com
+
+Phone : 9122328634
+
+Education
+---------
+MCA
+
+Experience
+----------
+3 Years
+
+Company
+-------
+Accenture
+
+Skills
+------
+Pandas, GitHub, MySQL, Flask, FastAPI, SQL, Python, Docker, Django, Linux
+
+Projects
+--------
+- Chat Application
+- AI Resume Screening Tool
+
+Certificates
+------------
+- TensorFlow Developer
+- Cisco Networking Essentials

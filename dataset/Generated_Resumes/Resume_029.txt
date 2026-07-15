@@ -1,0 +1,39 @@
+
+==================================================
+Yash Sidhu
+==================================================
+
+Role
+----
+Data Analyst
+
+Contact
+-------
+Email : yash.sidhu898@gmail.com
+
+Phone : 9329278740
+
+Education
+---------
+BE Software Engineering
+
+Experience
+----------
+1 Years
+
+Company
+-------
+Tech Mahindra
+
+Skills
+------
+Python, Power BI, Tableau, Pandas, Data Cleaning, SQL, NumPy, Excel, Statistics
+
+Projects
+--------
+- Customer Churn Analysis
+- Netflix Data Analysis
+
+Certificates
+------------
+- Oracle Java Foundations

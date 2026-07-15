@@ -1,0 +1,41 @@
+
+==================================================
+Devansh Kumar
+==================================================
+
+Role
+----
+Frontend Developer
+
+Contact
+-------
+Email : devansh.kumar302@gmail.com
+
+Phone : 9543109927
+
+Education
+---------
+B.Tech Artificial Intelligence
+
+Experience
+----------
+1 Years
+
+Company
+-------
+Wipro
+
+Skills
+------
+React, JavaScript, Tailwind CSS, Redux, GitHub, HTML, Responsive Design, Bootstrap
+
+Projects
+--------
+- E-Commerce Frontend
+- Task Management App
+- Netflix Clone
+- News Portal
+
+Certificates
+------------
+- AWS Cloud Practitioner

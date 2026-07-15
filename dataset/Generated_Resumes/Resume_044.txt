@@ -1,0 +1,41 @@
+
+==================================================
+Sakshi Tiwari
+==================================================
+
+Role
+----
+ML Engineer
+
+Contact
+-------
+Email : sakshi.tiwari345@gmail.com
+
+Phone : 9834769817
+
+Education
+---------
+B.Tech Information Technology
+
+Experience
+----------
+3 Years
+
+Company
+-------
+Accenture
+
+Skills
+------
+NLP, Machine Learning, Python, OpenCV, Deep Learning, Scikit-Learn, PyTorch
+
+Projects
+--------
+- Sentiment Analysis
+- Object Detection
+- Face Mask Detection
+
+Certificates
+------------
+- Coursera Machine Learning
+- Google Data Analytics

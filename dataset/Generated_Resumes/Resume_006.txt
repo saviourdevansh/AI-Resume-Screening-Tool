@@ -1,0 +1,40 @@
+
+==================================================
+Arjun Gupta
+==================================================
+
+Role
+----
+Python Developer
+
+Contact
+-------
+Email : arjun.gupta436@gmail.com
+
+Phone : 9971630400
+
+Education
+---------
+B.Tech Information Technology
+
+Experience
+----------
+0 Years
+
+Company
+-------
+-
+
+Skills
+------
+Pandas, Docker, Django, Python, FastAPI, REST API, GitHub, MySQL, Flask, NumPy, SQL, Linux, Git
+
+Projects
+--------
+- Library Management System
+- Inventory Management System
+
+Certificates
+------------
+- Google Data Analytics
+- Microsoft Azure Fundamentals

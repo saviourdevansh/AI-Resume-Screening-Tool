@@ -1,0 +1,41 @@
+
+==================================================
+Harsh Joshi
+==================================================
+
+Role
+----
+Data Analyst
+
+Contact
+-------
+Email : harsh.joshi118@gmail.com
+
+Phone : 9929651123
+
+Education
+---------
+BE Software Engineering
+
+Experience
+----------
+4 Years
+
+Company
+-------
+Cognizant
+
+Skills
+------
+Statistics, Pandas, NumPy, Power BI, Excel, Python, SQL
+
+Projects
+--------
+- COVID-19 Dashboard
+- HR Analytics Dashboard
+- IPL Data Analysis
+- Netflix Data Analysis
+
+Certificates
+------------
+- Oracle Java Foundations
