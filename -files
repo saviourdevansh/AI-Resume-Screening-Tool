@@ -200,4 +200,104 @@ Date:   Tue Jul 14 20:32:48 2026 +0530
  .../reportlab/graphics/charts/dotbox.py            |   165 [32m+[m
  .../reportlab/graphics/charts/doughnut.py          |   473 [32m+[m
  .../reportlab/graphics/charts/legends.py           |   647 [32m++[m
- .../reportlab/graphics/charts/linechart
+ .../reportlab/graphics/charts/linecharts.py        |   801 [32m++[m
+ .../reportlab/graphics/charts/lineplots.py         |  1248 [32m+++[m
+ .../reportlab/graphics/charts/markers.py           |    82 [32m+[m
+ .../reportlab/graphics/charts/piecharts.py         |  1706 [32m+++[m
+ .../reportlab/graphics/charts/slidebox.py          |   185 [32m+[m
+ .../reportlab/graphics/charts/spider.py            |   411 [32m+[m
+ .../reportlab/graphics/charts/textlabels.py        |   581 [32m+[m
+ .../reportlab/graphics/charts/utils.py             |   483 [32m+[m
+ .../reportlab/graphics/charts/utils3d.py           |   230 [32m+[m
+ .../site-packages/reportlab/graphics/renderPDF.py  |   400 [32m+[m
+ .../site-packages/reportlab/graphics/renderPM.py   |   824 [32m++[m
+ .../site-packages/reportlab/graphics/renderPS.py   |   973 [32m++[m
+ .../site-packages/reportlab/graphics/renderSVG.py  |   979 [32m++[m
+ .../site-packages/reportlab/graphics/renderbase.py |   356 [32m+[m
+ .../reportlab/graphics/samples/__init__.py         |     1 [32m+[m
+ .../samples/__pycache__/__init__.cpython-312.pyc   |   Bin [31m0[m -> [32m300[m bytes
+ .../samples/__pycache__/bubble.cpython-312.pyc     |   Bin [31m0[m -> [32m5897[m bytes
+ .../__pycache__/clustered_bar.cpython-312.pyc      |   Bin [31m0[m -> [32m6574[m bytes
+ .../__pycache__/clustered_column.cpython-312.pyc   |   Bin [31m0[m -> [32m6483[m bytes
+ .../__pycache__/excelcolors.cpython-312.pyc        |   Bin [31m0[m -> [32m1937[m bytes
+ .../__pycache__/exploded_pie.cpython-312.pyc       |   Bin [31m0[m -> [32m5060[m bytes
+ .../__pycache__/filled_radar.cpython-312.pyc       |   Bin [31m0[m -> [32m4454[m bytes
+ .../samples/__pycache__/line_chart.cpython-312.pyc |   Bin [31m0[m -> [32m6566[m bytes
+ .../linechart_with_markers.cpython-312.pyc         |   Bin [31m0[m -> [32m7911[m bytes
+ .../samples/__pycache__/radar.cpython-312.pyc      |   Bin [31m0[m -> [32m5427[m bytes
+ .../samples/__pycache__/runall.cpython-312.pyc     |   Bin [31m0[m -> [32m2952[m bytes
+ .../samples/__pycache__/scatter.cpython-312.pyc    |   Bin [31m0[m -> [32m5778[m bytes
+ .../__pycache__/scatter_lines.cpython-312.pyc      |   Bin [31m0[m -> [32m6845[m bytes
+ .../scatter_lines_markers.cpython-312.pyc          |   Bin [31m0[m -> [32m6036[m bytes
+ .../samples/__pycache__/simple_pie.cpython-312.pyc |   Bin [31m0[m -> [32m4800[m bytes
+ .../__pycache__/stacked_bar.cpython-312.pyc        |   Bin [31m0[m -> [32m6654[m bytes
+ .../__pycache__/stacked_column.cpython-312.pyc     |   Bin [31m0[m -> [32m6562[m bytes
+ .../reportlab/graphics/samples/bubble.py           |    73 [32m+[m
+ .../reportlab/graphics/samples/clustered_bar.py    |    84 [32m+[m
+ .../reportlab/graphics/samples/clustered_column.py |    83 [32m+[m
+ .../reportlab/graphics/samples/excelcolors.py      |    45 [32m+[m
+ .../reportlab/graphics/samples/exploded_pie.py     |    65 [32m+[m
+ .../reportlab/graphics/samples/filled_radar.py     |    54 [32m+[m
+ .../reportlab/graphics/samples/line_chart.py       |    83 [32m+[m
+ .../graphics/samples/linechart_with_markers.py     |    94 [32m+[m
+ .../reportlab/graphics/samples/radar.py            |    66 [32m+[m
+ .../reportlab/graphics/samples/runall.py           |    57 [32m+[m
+ .../reportlab/graphics/samples/scatter.py          |    71 [32m+[m
+ .../reportlab/graphics/samples/scatter_lines.py    |    82 [32m+[m
+ .../graphics/samples/scatter_lines_markers.py      |    72 [32m+[m
+ .../reportlab/graphics/samples/simple_pie.py       |    61 [32m+[m
+ .../reportlab/graphics/samples/stacked_bar.py      |    85 [32m+[m
+ .../reportlab/graphics/samples/stacked_column.py   |    84 [32m+[m
+ .../Lib/site-packages/reportlab/graphics/shapes.py |  1572 [32m+++[m
+ .../site-packages/reportlab/graphics/svgpath.py    |   451 [32m+[m
+ .../reportlab/graphics/testdrawings.py             |   296 [32m+[m
+ .../site-packages/reportlab/graphics/testshapes.py |   576 [32m+[m
+ .../site-packages/reportlab/graphics/transform.py  |    99 [32m+[m
+ venv/Lib/site-packages/reportlab/graphics/utils.py |   211 [32m+[m
+ .../site-packages/reportlab/graphics/widgetbase.py |   655 [32m++[m
+ .../reportlab/graphics/widgets/__init__.py         |     5 [32m+[m
+ .../widgets/__pycache__/__init__.cpython-312.pyc   |   Bin [31m0[m -> [32m299[m bytes
+ .../__pycache__/adjustableArrow.cpython-312.pyc    |   Bin [31m0[m -> [32m5331[m bytes
+ .../widgets/__pycache__/eventcal.cpython-312.pyc   |   Bin [31m0[m -> [32m13945[m bytes
+ .../widgets/__pycache__/flags.cpython-312.pyc      |   Bin [31m0[m -> [32m43570[m bytes
+ .../widgets/__pycache__/grids.cpython-312.pyc      |   Bin [31m0[m -> [32m23604[m bytes
+ .../widgets/__pycache__/markers.cpython-312.pyc    |   Bin [31m0[m -> [32m14473[m bytes
+ .../__pycache__/signsandsymbols.cpython-312.pyc    |   Bin [31m0[m -> [32m46088[m bytes
+ .../widgets/__pycache__/table.cpython-312.pyc      |   Bin [31m0[m -> [32m8459[m bytes
+ .../reportlab/graphics/widgets/adjustableArrow.py  |   126 [32m+[m
+ .../reportlab/graphics/widgets/eventcal.py         |   299 [32m+[m
+ .../reportlab/graphics/widgets/flags.py            |   879 [32m++[m
+ .../reportlab/graphics/widgets/grids.py            |   542 [32m+[m
+ .../reportlab/graphics/widgets/markers.py          |   245 [32m+[m
+ .../reportlab/graphics/widgets/signsandsymbols.py  |   977 [32m++[m
+ .../reportlab/graphics/widgets/table.py            |   160 [32m+[m
+ venv/Lib/site-packages/reportlab/lib/PyFontify.py  |   161 [32m+[m
+ venv/Lib/site-packages/reportlab/lib/__init__.py   |     7 [32m+[m
+ .../lib/__pycache__/PyFontify.cpython-312.pyc      |   Bin [31m0[m -> [32m4253[m bytes
+ .../lib/__pycache__/__init__.cpython-312.pyc       |   Bin [31m0[m -> [32m330[m bytes
+ .../reportlab/lib/__pycache__/abag.cpython-312.pyc |   Bin [31m0[m -> [32m2086[m bytes
+ .../lib/__pycache__/arciv.cpython-312.pyc          |   Bin [31m0[m -> [32m5099[m bytes
+ .../lib/__pycache__/attrmap.cpython-312.pyc        |   Bin [31m0[m -> [32m9030[m bytes
+ .../lib/__pycache__/boxstuff.cpython-312.pyc       |   Bin [31m0[m -> [32m2670[m bytes
+ .../lib/__pycache__/codecharts.cpython-312.pyc     |   Bin [31m0[m -> [32m17348[m bytes
+ .../lib/__pycache__/colors.cpython-312.pyc         |   Bin [31m0[m -> [32m58850[m bytes
+ .../reportlab/lib/__pycache__/corp.cpython-312.pyc |   Bin [31m0[m -> [32m30976[m bytes
+ .../lib/__pycache__/enums.cpython-312.pyc          |   Bin [31m0[m -> [32m402[m bytes
+ .../lib/__pycache__/extformat.cpython-312.pyc      |   Bin [31m0[m -> [32m3947[m bytes
+ .../lib/__pycache__/fontfinder.cpython-312.pyc     |   Bin [31m0[m -> [32m17654[m bytes
+ .../lib/__pycache__/fonts.cpython-312.pyc          |   Bin [31m0[m -> [32m3279[m bytes
+ .../lib/__pycache__/formatters.cpython-312.pyc     |   Bin [31m0[m -> [32m5668[m bytes
+ .../lib/__pycache__/geomutils.cpython-312.pyc      |   Bin [31m0[m -> [32m1639[m bytes
+ .../lib/__pycache__/logger.cpython-312.pyc         |   Bin [31m0[m -> [32m3328[m bytes
+ .../lib/__pycache__/normalDate.cpython-312.pyc     |   Bin [31m0[m -> [32m31861[m bytes
+ .../lib/__pycache__/pagesizes.cpython-312.pyc      |   Bin [31m0[m -> [32m2945[m bytes
+ .../lib/__pycache__/pdfencrypt.cpython-312.pyc     |   Bin [31m0[m -> [32m34467[m bytes
+ .../lib/__pycache__/pygments2xpre.cpython-312.pyc  |   Bin [31m0[m -> [32m4205[m bytes
+ .../lib/__pycache__/randomtext.cpython-312.pyc     |   Bin [31m0[m -> [32m17589[m bytes
+ .../lib/__pycache__/rl_accel.cpython-312.pyc       |   Bin [31m0[m -> [32m16249[m bytes
+ .../lib/__pycache__/rl_safe_eval.cpython-312.pyc   |   Bin [31m0[m -> [32m61633[m bytes
+ .../lib/__pycache__/rltempfile.cpython-312.pyc     |   Bin [31m0[m -> [32m1881[m bytes
+ .../lib/__pycache__/rparsexml.cpython-312.pyc      |   Bin [31m0[m -> [32m13672[m bytes
+ .../lib/__pycache__/sequencer.cpython-312.pyc      |   Bin [31m0[m -> [32m15131[m bytes
+ .../lib/__pycache__/styles.cpython-312.pyc         |   Bin [31m0[m -> [32m15394[m bytes
+ .../lib/__pycache__/testutils.cpython-312.pyc      |   Bin [

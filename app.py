@@ -16,7 +16,12 @@ from utils.openrouter import generate_ai_feedback
 from utils.pdf_report import create_pdf
 from markdown import markdown
 from flask import send_from_directory
-from database import create_database
+from database import (
+    create_database,
+    insert_candidate,
+    get_candidates,
+    clear_candidates
+)
 
 import os
 
@@ -233,6 +238,13 @@ def rank():
         job_description
     )
 
+    # Save Candidates to SQLite
+    clear_candidates()
+
+    for candidate in candidates:
+        insert_candidate(candidate)
+
+    # Save Candidates in Memory
     candidate_data = {}
 
     for c in candidates:
@@ -274,7 +286,6 @@ def rank():
         "ranking.html",
         candidates=candidates
     )
-
 
 # ---------------------------------------
 # Download CSV
