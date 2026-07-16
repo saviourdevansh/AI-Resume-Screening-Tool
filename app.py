@@ -25,6 +25,7 @@ from database import (
     delete_candidate
 )
 from flask import redirect
+import pandas as pd
 
 import os
 
