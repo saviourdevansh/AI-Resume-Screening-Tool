@@ -57,3 +57,14 @@ Thumbs.db
 # PythonAnywhere
 # ------------------------------
 *.sqlite3
+
+# Cache
+.pytest_cache/
+.mypy_cache/
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.AppleDouble

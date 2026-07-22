@@ -214,12 +214,9 @@ class="fw-bold text-decoration-none">
 
 <td>
 
-<a
-href="{{ url_for('candidate_details', filename=candidate.resume_file) }}"
-class="btn btn-sm btn-primary">
-
-👤 Details
-
+<a href="{{ url_for('candidate_details_by_id', id=candidate.id) }}"
+   class="btn btn-details">
+    👤 Details
 </a>
 
 <a

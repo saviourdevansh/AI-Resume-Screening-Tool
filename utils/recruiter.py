@@ -8,7 +8,7 @@ from utils.education import extract_education
 from utils.projects import extract_projects
 from utils.certifications import extract_certifications
 from utils.ranking import calculate_match
-from utils.openrouter import generate_ai_feedback
+from utils.gemini import generate_ai_feedback
 
 
 def analyze_candidate(filepath, job_description):
@@ -44,10 +44,19 @@ def analyze_candidate(filepath, job_description):
         sections["certifications"] if sections["certifications"].strip() else resume_text
     )
 
-    # AI Feedback
-# AI Feedback Disabled for Fast Ranking
+    # ---------- AI Feedback ----------
+    try:
+        ai_feedback = generate_ai_feedback(
+            resume_text[:1500],
+            job_description[:700]
+        )
 
-    ai_feedback = ""
+        if not ai_feedback:
+            ai_feedback = "AI Review could not be generated."
+
+    except Exception as e:
+        print("Gemini Error:", e)
+        ai_feedback = f"AI Review Error: {str(e)}"
 
     return {
 

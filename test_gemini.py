@@ -1,27 +1,12 @@
-from utils.gemini_ai import generate_ai_feedback
+from google import genai
+import os
+from dotenv import load_dotenv
 
-resume = """
-Python Developer
+load_dotenv()
 
-Skills:
-Python
-Flask
-SQL
-Machine Learning
+client = genai.Client(
+    api_key=os.getenv("GEMINI_API_KEY")
+)
 
-Projects:
-AI Resume Screening Tool
-"""
-
-jd = """
-Looking for Python Developer with
-
-Python
-Flask
-Docker
-AWS
-Git
-REST API
-"""
-
-print(generate_ai_feedback(resume, jd))
+for model in client.models.list():
+    print(model.name)

@@ -12,7 +12,7 @@ from utils.projects import extract_projects
 from utils.certifications import extract_certifications
 from utils.section_parser import extract_sections
 from utils.recruiter import rank_candidates
-from utils.openrouter import generate_ai_feedback
+from utils.gemini import generate_ai_feedback
 from utils.pdf_report import create_pdf
 from markdown import markdown
 from flask import send_from_directory
@@ -26,6 +26,7 @@ from database import (
 )
 from flask import redirect
 import pandas as pd
+from flask import session, redirect, flash
 
 import os
 
@@ -34,6 +35,8 @@ last_candidate = {}
 
 app = Flask(__name__)
 create_database()
+
+app.secret_key = "ResumeAI2026"
 
 UPLOAD_FOLDER = "uploads"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
@@ -61,6 +64,10 @@ def single():
 
 @app.route("/recruiter")
 def recruiter():
+
+    if not session.get("logged_in"):
+        return redirect("/login")
+
     return render_template("recruiter.html")
 
 
@@ -227,6 +234,9 @@ def upload():
 @app.route("/rank", methods=["POST"])
 def rank():
 
+    if not session.get("logged_in"):
+     return redirect("/login")
+
     global candidate_data
 
     job_description = request.form.get("job_description", "")
@@ -374,6 +384,31 @@ def ai_review():
         ai_feedback=ai_feedback
     )
 
+ # ---------------------------------------
+# naya route
+# ---------------------------------------
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+
+    if request.method == "POST":
+
+        email = request.form["email"]
+        password = request.form["password"]
+
+        if email == "admin@resumeai.com" and password == "Admin@123":
+
+            session["logged_in"] = True
+
+          
+
+            return redirect("/recruiter")
+
+        flash("Invalid Email or Password")
+
+    return render_template("login.html")
+    
+
 @app.route("/candidate/<filename>")
 def candidate_details(filename):
 
@@ -418,7 +453,7 @@ def history():
     )
 
 @app.route("/candidate/<int:id>")
-def candidate_details(id):
+def candidate_details_by_id(id):
 
     candidate = get_candidate_by_id(id)
 

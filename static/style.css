@@ -1060,7 +1060,7 @@ a:hover{
 
     border-radius:50%;
 
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    background:linear-gradient(135deg,#2563eb,#625b6f);
 
     color:white;
 
@@ -1220,7 +1220,7 @@ a:hover{
 
 .download-card{
 
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    background:linear-gradient(135deg,#2563eb,#958da3);
 
     color:white;
 
@@ -1242,7 +1242,7 @@ a:hover{
 
     background:white;
 
-    color:#2563eb;
+    color:#768198;
 
     border-radius:12px;
 
@@ -1902,4 +1902,30 @@ transform:translateY(0);
 
 }
 
+}
+
+.btn-details{
+    background: #2563eb;
+    color: white !important;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+.btn-details:hover{
+    background: #1d4ed8;
+}
+
+.btn-download{
+    background: #10b981;
+    color: white !important;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+.btn-download:hover{
+    background: #059669;
 }

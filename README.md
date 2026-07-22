@@ -1,77 +1,90 @@
-# 🤖 AI Resume Screening Platform
+# AI Resume Screening Tool
 
-This project is an AI-powered Resume Screening Platform developed using **Python** and **Flask**. It helps analyze resumes, compare them with a job description, calculate an ATS score, identify missing skills, generate AI-based feedback, and rank multiple candidates. It also allows recruiters to export reports in PDF and CSV formats.
-
----
-
-## ✨ Features
-
-- 📄 Extracts text from PDF resumes
-- 📊 Calculates ATS compatibility score
-- 🎯 Matches resume skills with the Job Description
-- ❌ Highlights missing skills
-- 🤖 Generates AI-based resume feedback
-- 💼 Detects experience from resumes
-- 🎓 Extracts education details
-- 🏆 Identifies projects and certifications
-- 👥 Recruiter dashboard for multiple resume analysis
-- 📈 Automatically ranks candidates
-- 📥 Export results as CSV
-- 📑 Generate downloadable PDF reports
+An intelligent web application that helps recruiters analyze resumes efficiently using NLP, ATS-style scoring, AI-powered feedback, and recruiter-friendly candidate management.
 
 ---
 
-## 🛠 Tech Stack
+## Overview
 
-**Frontend**
+Recruiters often spend significant time reviewing resumes manually. This project automates the initial screening process by extracting key information from resumes, calculating an ATS score, identifying technical skills, and generating AI-based feedback to assist in shortlisting candidates.
+
+The application is built with Flask and provides a clean interface for both resume analysis and recruiter management.
+
+---
+
+## Features
+
+- Resume upload (PDF)
+- ATS Score calculation
+- Technical skill extraction using NLP
+- Experience detection
+- Education extraction
+- Project identification
+- Certification extraction
+- Resume ranking
+- Recruiter dashboard
+- Candidate history
+- Candidate detail page
+- AI-generated resume feedback
+- PDF report generation
+- CSV export
+- SQLite database integration
+
+---
+
+## Tech Stack
+
+### Backend
+- Python
+- Flask
+- SQLite
+
+### AI / NLP
+- spaCy
+- PhraseMatcher
+- OpenRouter API
+
+### Frontend
 - HTML
 - CSS
 - Bootstrap
+- JavaScript
 
-**Backend**
-- Python
-- Flask
-
-**AI Integration**
-- OpenRouter API
-
-**Libraries Used**
-- PyMuPDF
+### Libraries
+- PyPDF2
 - ReportLab
-- Markdown
-- python-dotenv
+- Pandas
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
-```text
-AI-Resume-Screening-Tool/
+```
+AI-Resume-Screening-Tool
 │
 ├── app.py
+├── database.py
 ├── requirements.txt
-├── README.md
-├── .gitignore
+├── Procfile
+├── runtime.txt
 │
 ├── static/
 ├── templates/
 ├── utils/
-└── uploads/
+│
+├── uploads/
+└── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+## Installation
 
 Clone the repository
 
 ```bash
 git clone https://github.com/saviourdevansh/AI-Resume-Screening-Tool.git
-```
 
-Move into the project directory
-
-```bash
 cd AI-Resume-Screening-Tool
 ```
 
@@ -81,12 +94,18 @@ Create a virtual environment
 python -m venv venv
 ```
 
-Activate the environment
+Activate it
 
-**Windows**
+### Windows
 
 ```bash
 venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source venv/bin/activate
 ```
 
 Install dependencies
@@ -95,44 +114,83 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
-Run the application
+---
+
+## Environment Variables
+
+Create a `.env` file in the project root.
+
+```env
+OPENROUTER_API_KEY=your_openrouter_api_key
+```
+
+> **Note:** Never commit your API key to GitHub.
+
+---
+
+## Run the Application
 
 ```bash
 python app.py
 ```
 
+Open your browser and visit
+
+```
+http://127.0.0.1:5000
+```
+
 ---
 
-## 📸 Screenshots
+## Workflow
+
+1. Upload a resume (PDF)
+2. Resume text is extracted
+3. Skills are identified using NLP
+4. Experience, education, projects and certifications are detected
+5. ATS score is calculated
+6. AI generates personalized feedback
+7. Candidate is stored in the recruiter dashboard
+8. PDF report can be generated
+
+---
+
+## Screenshots
+
+Add screenshots here.
 
 - Home Page
-- Resume Analysis
-- AI Resume Review
+- Resume Upload
+- ATS Score
 - Recruiter Dashboard
-- Candidate Ranking
-- PDF Report
-
-*(Screenshots can be added here.)*
+- Candidate Details
+- AI Feedback
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
-- User Authentication
-- Database Integration
-- Resume History
-- Dashboard Analytics
-- Email Report Sharing
-- Enhanced AI Suggestions
+- Multi-resume bulk upload
+- Job description matching
+- Authentication system
+- Email notifications
+- Interview scheduling
+- Docker support
+- Cloud deployment
+- Multi-language resume support
 
 ---
 
-## 👨‍💻 About the Developer
+## License
 
-Developed by **Devansh Kumar**
+This project is developed for educational and portfolio purposes.
+
+---
+
+## Author
+
+**Devansh Kumar**
 
 GitHub: https://github.com/saviourdevansh
 
----
-
-⭐ If you found this project useful, consider giving it a star.
+If you found this project useful, consider giving it a ⭐ on GitHub.
